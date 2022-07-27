@@ -3,6 +3,80 @@
 @tailwind utilities;
 
 @layer base {
+    body {
+        @apply font-sans text-base;
+    }
+
+    h1 {
+        @apply font-serif text-6xl sm:text-8xl md:text-9xl lg:text-10xl;
+    }
+
+    p {
+        @apply text-lg;
+
+        &.small {
+            @apply text-sm;
+        }
+
+        &.large {
+            @apply text-xl;
+        }
+    }
+
+    strong {
+
+    }
+
+    em {
+
+    }
+
+    blockquote {
+
+    }
+
+    ul {
+
+    }
+
+    ol {
+
+    }
+
+    li {
+        
+    }
+
+    
+
+}
+
+/* @font-face {
+    font-family: "open_sans_bold";
+    src: url('./public/fonts/opensans-bold-webfont.woff2') format('woff2'),
+        url('./public/fonts/opensans-bold-webfont.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "open_sans_semi_bold";
+    src: url('./public/fonts/opensans-semibold-webfont.woff2') format('woff2'),
+        url('./public/fonts/opensans-semibold-webfont.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "open_sans_regular";
+    src: url('./public/fonts/opensans-regular-webfont.woff2') format('woff2'),
+        url('./public/fonts/opensans-regular-webfont.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+} */
+
+/* 
+@layer base {
     li {
         @apply text-white hover:text-red-400
     }
@@ -17,4 +91,8 @@
         @apply flex justify-between text-white max-w-5xl flex-1;
     }
 }
+ */
 
+ /* h1 {
+    font-family: 'open_sans_bold', serif;
+ } */

@@ -8,49 +8,71 @@
     }
 
     h1 {
-        @apply font-serif text-6xl sm:text-8xl md:text-9xl lg:text-10xl;
+        @apply font-serif text-neutral-800 font-semibold text-6xl sm:text-8xl md:text-9xl lg:text-10xl;
     }
-
+   h2 {
+        @apply font-serif  text-neutral-800 font-semibold text-4xl sm:text-5xl md:text-7xl; 
+    }
+    h3 {
+        @apply font-sans  text-neutral-700 font-bold text-xl sm:text-xxl md:text-3xl;
+    }
+    h4 {
+        @apply font-sans  text-neutral-700 font-bold text-lg sm:text-xl;
+    }
+    h5 {
+        @apply font-sans  text-neutral-800 font-semibold  text-base sm:text-lg;
+    }
+    h6 {
+        @apply font-sans  text-neutral-800 font-semibold text-xs sm:text-base;
+    }
     p {
-        @apply text-lg;
+        @apply font-sans  text-neutral-600 text-lg ;
 
         &.small {
-            @apply text-sm;
+            @apply font-sans  text-neutral-600 text-sm;
         }
 
         &.large {
-            @apply text-xl;
+            @apply font-sans  text-neutral-600 text-xl md:text-3xl;
         }
     }
 
     strong {
-
+        @apply font-sans  text-neutral-800 text-lg font-bold;
     }
 
     em {
-
+        @apply font-sans  text-neutral-600 text-lg font-normal;
     }
 
     blockquote {
-
+        @apply font-sans  text-neutral-600 font-normal text-lg py-10 px-5 sm:text-xl md:text-xxl lg:text-3xl;
+        @apply sm:py-12 px-[3.125rem] mb-[0.625rem];
+        @apply md:py-[3.625rem] px-[3.9375rem] mb-[0.625rem];
+        @apply lg:py-[4.375rem] px-[7.875rem] mb-[0.625rem];
     }
 
     ul {
+      @apply  font-sans  text-neutral-600 mb-4 font-normal list-disc; 
 
     }
 
     ol {
-
+        @apply font-sans  text-neutral-600 mb-4 font-normal list-decimal;
     }
 
     li {
         
     }
-
+    img {
+        @apply max-w-[48.75rem] rounded-[2rem] border-black m-auto;
+    }
+    a {
+        @apply text-primary text-lg
+    }
     
 
 }
-
 /* @font-face {
     font-family: "open_sans_bold";
     src: url('./public/fonts/opensans-bold-webfont.woff2') format('woff2'),

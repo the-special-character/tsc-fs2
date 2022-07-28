@@ -27,55 +27,47 @@
         @apply font-serif text-xs sm:text-base md:text-base lg:text-base;
     }
 
-    p {
-        @apply text-lg;
+}
 
-        &.small {
-            @apply text-sm;
+@layer components {
+
+    .btn {
+        @apply p-5 rounded-full font-bold transition-all duration-300 ease-linear;    
+ 
+        &.btn--primary {
+            @apply bg-primary text-neutral-100
         }
 
-        &.large {
-            @apply text-xl;
+        &.btn--primary:hover {
+            @apply bg-neutral-800;
+        }
+
+        &.btn--secondary {
+            @apply bg-neutral-300 text-neutral-700
+        }
+
+        &.btn--secondary:hover {
+            @apply bg-neutral-400;
+        }
+
+        &.btn--small {
+            @apply px-8 py-4;
+        }
+
+        &.btn--large {
+            @apply py-6 px-16 text-xxl;
         }
     }
-
-    strong {
-        @apply font-bold;
-    }
-
-    em {
-        @apply italic;
-    }
-
-    blockquote {
-        @apply text-3xl;
-    }
-
-    ul {
-        @apply text-lg;
-    }
-
-    ol {
-        @apply text-lg;
-    }
-
-    li {
-        @apply text-lg;  
-    }
-    a{
-        @apply text-lg hover underline;
-    }
-    
 
 }
 
-@layer components{
-    .hover{
-        &:hover{
-            color:#F99D77;
-        }
-    }
+
+.btn:hover {
+    transform: scale3d(0.96, 0.96, 1.01);
 }
+
+
+
 /* @font-face {
     font-family: "open_sans_bold";
     src: url('./public/fonts/opensans-bold-webfont.woff2') format('woff2'),
@@ -83,7 +75,6 @@
     font-weight: 700;
     font-style: normal;
 }
-
 @font-face {
     font-family: "open_sans_semi_bold";
     src: url('./public/fonts/opensans-semibold-webfont.woff2') format('woff2'),

@@ -3,52 +3,47 @@
 @tailwind utilities;
 
 @layer base {
-    body {
-        @apply font-sans text-base;
+  body {
+    @apply font-sans text-base;
+  }
+
+  h1 {
+    @apply font-serif text-6xl sm:text-8xl md:text-9xl lg:text-10xl;
+  }
+
+  p {
+    @apply text-lg;
+
+    &.small {
+      @apply text-sm;
     }
 
-    h1 {
-        @apply font-serif text-6xl sm:text-8xl md:text-9xl lg:text-10xl;
+    &.large {
+      @apply text-xl;
     }
+  }
 
-    p {
-        @apply text-lg;
+  b {
+    @apply text-lg;
+  }
 
-        &.small {
-            @apply text-sm;
-        }
+  em {
+    @apply text-lg;
+  }
 
-        &.large {
-            @apply text-xl;
-        }
-    }
+  blockquote {
+    @apply text-lg;
+  }
 
-    strong {
+  ul {
+    @apply text-lg;
+  }
 
-    }
+  ol {
+  }
 
-    em {
-
-    }
-
-    blockquote {
-
-    }
-
-    ul {
-
-    }
-
-    ol {
-
-    }
-
-    li {
-        
-    }
-
-    
-
+  li {
+  }
 }
 
 /* @font-face {
@@ -93,6 +88,6 @@
 }
  */
 
- /* h1 {
+/* h1 {
     font-family: 'open_sans_bold', serif;
  } */

@@ -8,11 +8,30 @@
     }
 
     h1 {
-        @apply font-serif text-6xl sm:text-8xl md:text-9xl lg:text-10xl;
+        @apply font-serif text-neutral-800 font-semibold text-6xl sm:text-8xl md:text-9xl lg:text-10xl;
+    }
+    h2{
+        @apply font-serif text-neutral-800 font-semibold text-4xl sm:text-5xl md:text-7xl;
+    }
+    h3{
+        @apply font-bold text-neutral-700 text-xl sm:text-xxl md:text-3xl;
+    }
+    h4{
+        @apply font-bold text-neutral-700 text-lg sm:text-xl;
+    }
+    h5{
+        @apply font-serif text-neutral-800 font-semibold text-base sm:text-lg;
+    }
+    h6{
+        @apply font-serif text-neutral-800 font-semibold text-xs sm:text-base;
+    }
+
+    a{
+        @apply text-primary text-base underline hover:text-secondary3;
     }
 
     p {
-        @apply text-lg;
+        @apply text-lg text-neutral-600;
 
         &.small {
             @apply text-sm;
@@ -24,27 +43,26 @@
     }
 
     strong {
-
+        @apply text-lg text-neutral-800;
     }
 
-    em {
-
+    em{
+        @apply font-normal text-lg text-neutral-600;
     }
-
-    blockquote {
-
+    blockquote{
+        @apply font-normal text-lg text-neutral-600 border-l-4 border-secondary3;
     }
 
     ul {
-
+        @apply font-normal text-lg text-neutral-600 list-disc ml-10;
     }
 
     ol {
-
+        @apply font-normal text-lg text-neutral-600 list-decimal ml-10 my-2;
     }
 
     li {
-        
+        @apply list-item;
     }
 
     

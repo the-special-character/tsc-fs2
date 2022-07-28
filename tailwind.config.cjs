@@ -40,6 +40,11 @@ module.exports = {
       "serif": ['Newsreader', "serif"],
       "sans": ['Kumbh Sans', "sans-serif"],
     },
+    fontWeight: {
+      "bold": 700,
+      "semibold": 600,
+      "normal": 400,
+    },
     extend: {
     },
   },

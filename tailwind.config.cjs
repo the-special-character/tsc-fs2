@@ -40,6 +40,7 @@ module.exports = {
       "serif": ['Newsreader', "serif"],
       "sans": ['Kumbh Sans', "sans-serif"],
     },
+    
     extend: {
     },
   },

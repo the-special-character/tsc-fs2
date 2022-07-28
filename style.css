@@ -21,33 +21,16 @@
         &.large {
             @apply text-xl;
         }
+        &.extralarge {
+            @apply text-3xl;
+        }
     }
-
-    strong {
-
+    a,b,em,ol,ul,li{
+        @apply text-lg;
     }
-
-    em {
-
+    blockquote{
+        @apply text-3xl;
     }
-
-    blockquote {
-
-    }
-
-    ul {
-
-    }
-
-    ol {
-
-    }
-
-    li {
-        
-    }
-
-    
 
 }
 @layer components{

@@ -44,6 +44,55 @@
 
   li {
   }
+  h2 {
+    @apply font-serif text-4xl sm:text-5xl md:text-7xl lg:text-7xl;
+  }
+  h3 {
+    @apply font-serif text-xl sm:text-xxl md:text-3xl lg:text-3xl;
+  }
+  h4 {
+    @apply font-serif text-lg sm:text-xl md:text-xl lg:text-xl;
+  }
+  h5 {
+    @apply font-serif text-base sm:text-lg md:text-lg lg:text-lg;
+  }
+  h6 {
+    @apply font-serif text-xs sm:text-base md:text-base lg:text-base;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply p-5 rounded-full font-bold transition-all duration-300 ease-linear;
+
+    &.btn--primary {
+      @apply bg-primary text-neutral-100;
+    }
+
+    &.btn--primary:hover {
+      @apply bg-neutral-800;
+    }
+
+    &.btn--secondary {
+      @apply bg-neutral-300 text-neutral-700;
+    }
+
+    &.btn--secondary:hover {
+      @apply bg-neutral-400;
+    }
+
+    &.btn--small {
+      @apply px-8 py-4;
+    }
+
+    &.btn--large {
+      @apply py-6 px-16 text-xxl;
+    }
+  }
+}
+
+.btn:hover {
+  transform: scale3d(0.96, 0.96, 1.01);
 }
 
 /* @font-face {
@@ -53,7 +102,6 @@
     font-weight: 700;
     font-style: normal;
 }
-
 @font-face {
     font-family: "open_sans_semi_bold";
     src: url('./public/fonts/opensans-semibold-webfont.woff2') format('woff2'),

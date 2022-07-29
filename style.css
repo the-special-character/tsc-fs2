@@ -8,23 +8,52 @@
     }
 
     h1 {
-        @apply font-serif text-6xl sm:text-8xl md:text-9xl lg:text-10xl;
+        @apply font-serif text-6xl sm:text-8xl md:text-9xl lg:text-10xl text-neutral-800;
     }
 
     h2 {
-        @apply font-serif text-4xl sm:text-5xl md:text-7xl lg:text-7xl;
+        @apply font-serif text-4xl sm:text-5xl md:text-7xl lg:text-7xl text-neutral-800;
     }
+
     h3 {
-        @apply font-serif text-xl sm:text-xxl md:text-3xl lg:text-3xl;
+        @apply font-serif text-xl sm:text-xxl md:text-3xl lg:text-3xl text-neutral-700;
     }
     h4 {
-        @apply font-serif text-lg sm:text-xl md:text-xl lg:text-xl;
+        @apply font-serif text-lg sm:text-xl md:text-xl lg:text-xl text-neutral-700;
     }
     h5 {
-        @apply font-serif text-base sm:text-lg md:text-lg lg:text-lg;
+        @apply font-serif text-base sm:text-lg md:text-lg lg:text-lg text-neutral-600;
     }
     h6 {
-        @apply font-serif text-xs sm:text-base md:text-base lg:text-base;
+        @apply font-serif text-xs sm:text-base md:text-base lg:text-base text-neutral-600;
+}
+
+    p{
+        @apply text-lg text-neutral-600;
+
+        &.small{
+            @apply text-sm text-neutral-600;
+        }
+
+        &.large{
+            @apply text-xl text-neutral-600 md:text-3xl lg:text-3xl;
+        }
+    }
+
+    ol{
+        @apply text-lg text-neutral-600;
+    }
+
+    ul{
+        @apply text-lg text-neutral-600;
+    }
+
+    blockquote{
+        @apply text-lg text-neutral-600;
+    }
+
+    a{
+        @apply text-lg text-neutral-600;
     }
 
 }

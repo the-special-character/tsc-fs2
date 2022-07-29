@@ -2,80 +2,58 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-    body {
-        @apply font-sans text-base;
-    }
+@layer base{
 
-    h1 {
-        @apply font-serif text-6xl sm:text-8xl md:text-9xl lg:text-10xl;
+    body{
+      @apply font-sans text-base;
     }
-
-    h2 {
-        @apply font-serif text-4xl sm:text-5xl md:text-7xl lg:text-7xl;
+    h1{
+      @apply font-serif text-6xl sm:text-8xl md:text-9xl lg:text-10xl text-neutral-800 font-semibold;
     }
-    h3 {
-        @apply font-serif text-xl sm:text-xxl md:text-3xl lg:text-3xl;
+    h2{
+      @apply font-serif text-4xl sm:text-5xl md:text-7xl lg:text-7xl text-neutral-800 font-semibold;
     }
-    h4 {
-        @apply font-serif text-lg sm:text-xl md:text-xl lg:text-xl;
+    h3{
+      @apply font-serif text-xl sm:text-xxl md:text-3xl lg:text-3xl text-neutral-700 font-bold;
     }
-    h5 {
-        @apply font-serif text-base sm:text-lg md:text-lg lg:text-lg;
+    h4{
+      @apply font-serif text-lg sm:text-xl md:text-xl lg:text-xl text-neutral-700 font-bold;
     }
-    h6 {
-        @apply font-serif text-xs sm:text-base md:text-base lg:text-base;
+    h5{
+      @apply font-serif text-base sm:text-lg md:text-lg lg:text-lg text-neutral-800 font-semibold;
     }
-
-    p {
-        @apply text-lg;
-
-        &.small {
-            @apply text-sm;
-        }
-
-        &.large {
-            @apply text-xl;
-        }
+    h6{
+      @apply font-serif text-xs sm:text-base md:text-base lg:text-base font-semibold;
     }
-
-    strong {
-        @apply font-bold;
+    p{
+      @apply text-lg text-neutral-600 font-normal;
+  
+      &.small{
+        @apply text-sm text-neutral-600 font-normal;
+      }
+      &.large{
+        @apply text-xl text-neutral-600 font-normal;
+      }
     }
-
-    em {
-        @apply italic;
-    }
-
-    blockquote {
-        @apply text-3xl;
-    }
-
-    ul {
-        @apply text-lg;
-    }
-
-    ol {
-        @apply text-lg;
-    }
-
-    li {
-        @apply text-lg;  
+    blockquote{
+      @apply text-lg text-primary1;
     }
     a{
-        @apply text-lg hover underline;
+      @apply text-lg text-neutral-600 font-normal underline hover:text-secondary3;
     }
-    
-
-}
-
-@layer components{
-    .hover{
-        &:hover{
-            color:#F99D77;
-        }
+    strong{
+      @apply text-lg text-neutral-800 font-bold;
     }
-}
+    em{
+      @apply text-lg font-normal text-neutral-600 italic;
+    }
+    ul{
+      @apply text-lg text-primary1 font-normal;
+    }
+    ol{
+      @apply text-lg text-primary1 font-normal;
+    }
+  }
 /* @font-face {
     font-family: "open_sans_bold";
     src: url('./public/fonts/opensans-bold-webfont.woff2') format('woff2'),

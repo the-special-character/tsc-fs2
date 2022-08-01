@@ -59,6 +59,20 @@
         }
     }
 
+    .avatar {
+        @apply w-14 aspect-square rounded-full;
+        & img {
+            @apply w-full h-full rounded-full;
+        }
+    }
+
+    .author {
+        @apply flex items-center gap-2 font-bold text-lg text-neutral-800;
+        & span {
+            @apply max-w-xs line-clamp-1;
+        }
+    }
+
 }
 
 

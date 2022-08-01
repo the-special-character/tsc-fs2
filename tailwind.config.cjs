@@ -41,7 +41,12 @@ module.exports = {
       "sans": ['Kumbh Sans', "sans-serif"],
     },
     extend: {
+      aspectRatio: {
+        image: '4 / 3',
+      }
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/line-clamp'),
+  ],
 }

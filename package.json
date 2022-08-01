@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "@tailwindcss/line-clamp": "^0.4.0",
     "autoprefixer": "^10.4.7",
     "postcss": "^8.4.14",
     "postcss-nesting": "^10.1.10",

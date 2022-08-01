@@ -73,13 +73,24 @@
         }
     }
 
+    .card{
+        @apply w-1/3 m-4 shadow-md rounded-md overflow-hidden;
+
+        & > .card_body{
+            @apply pt-8 px-6 pb-10 sm:px-10 sm:pt-9 md:p-12 md:pt-11;
+            
+            & > time{
+                @apply text-base text-neutral-600 font-bold mb-4;
+            }
+        }
+    }
+
 }
 
 
 .btn:hover {
     transform: scale3d(0.96, 0.96, 1.01);
 }
-
 
 
 /* @font-face {

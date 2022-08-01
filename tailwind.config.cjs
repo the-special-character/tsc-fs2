@@ -40,9 +40,13 @@ module.exports = {
       "serif": ['Newsreader', "serif"],
       "sans": ['Kumbh Sans', "sans-serif"],
     },
+    boxShadow: {
+      "base": '0 5px 15px 0 rgba(30, 61, 96, 0.03)'
+    },
     extend: {
       aspectRatio: {
         image: '4 / 3',
+        vImage: '3 / 4'
       }
     },
   },

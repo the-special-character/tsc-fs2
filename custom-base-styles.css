@@ -1,0 +1,50 @@
+@layer base {
+    body {
+        @apply font-sans text-base;
+    }
+
+    h1 {
+        @apply font-serif text-6xl sm:text-8xl md:text-9xl lg:text-10xl;
+    }
+
+    h2 {
+        @apply font-serif text-4xl sm:text-5xl md:text-7xl lg:text-7xl;
+    }
+    h3 {
+        @apply font-serif text-xl sm:text-xxl md:text-3xl lg:text-3xl;
+    }
+    h4 {
+        @apply font-serif text-lg sm:text-xl md:text-xl lg:text-xl;
+    }
+    h5 {
+        @apply font-serif text-base sm:text-lg md:text-lg lg:text-lg;
+    }
+    h6 {
+        @apply font-serif text-xs sm:text-base md:text-base lg:text-base;
+    }
+
+    nav {
+        & ul {
+            @apply flex gap-10;
+            & li {
+                @apply text-neutral-700;
+
+                &:hover {
+                    @apply text-secondary3;
+                }
+
+                & a {
+                    @apply font-sans font-bold text-lg;
+                }
+
+                
+            }
+        }
+    }
+
+    section {
+        @apply h-screen
+    }
+
+
+}

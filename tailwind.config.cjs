@@ -1,24 +1,22 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    "./index.html",
-  ],
+  content: ["./index.html"],
   theme: {
     colors: {
-      primary: '#064EA4',
-      secondary1: '#E1EDFB',
-      secondary2: '#FCDF69',
-      secondary3: '#F99D77',
+      primary: "#064EA4",
+      secondary1: "#E1EDFB",
+      secondary2: "#FCDF69",
+      secondary3: "#F99D77",
       neutral: {
-        100: '#FFFFFF',
-        200: '#F9FAFB',
-        300: '#E7EAEE',
-        400: '#BECAD7',
-        500: '#8096B0',
-        600: '#62778F',
-        700: '#1E3D60',
-        800: '#1E3D60',
-      }
+        100: "#FFFFFF",
+        200: "#F9FAFB",
+        300: "#E7EAEE",
+        400: "#BECAD7",
+        500: "#8096B0",
+        600: "#62778F",
+        700: "#1E3D60",
+        800: "#1E3D60",
+      },
     },
     fontSize: {
       "10xl": ["60px", "1.3em"],
@@ -37,16 +35,15 @@ module.exports = {
       xs: ["14px", "1.5em"],
     },
     fontFamily: {
-      "serif": ['Newsreader', "serif"],
-      "sans": ['Kumbh Sans', "sans-serif"],
+      serif: ["Newsreader", "serif"],
+      sans: ["Kumbh Sans", "sans-serif"],
     },
     extend: {
       aspectRatio: {
-        image: '4 / 3',
-      }
+        image: "4 / 3",
+        vimage: "3 / 4",
+      },
     },
   },
-  plugins: [
-    require('@tailwindcss/line-clamp'),
-  ],
-}
+  plugins: [require("@tailwindcss/line-clamp")],
+};

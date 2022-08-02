@@ -1,0 +1,25 @@
+@layer components {
+    .header {
+        @apply bg-neutral-500 h-16;
+        &> div {
+            @apply flex justify-between items-center container mx-auto h-16;
+            & ul {
+                @apply flex gap-4 list-none m-0;
+            }
+        }
+    }
+
+    .highlight_round {
+        @apply absolute w-52 aspect-square -z-10;
+        &.tl {
+            @apply bg-secondary2 top-0 left-0 rounded-br-full;
+        }
+        &.br {
+            @apply bg-secondary3 bottom-0 right-0 rounded-tl-full;
+        }
+        
+    }
+    .highlight_square {
+        @apply absolute bg-primary w-5/12 h-screen top-0 right-0 -z-20;
+    }
+}

@@ -10,7 +10,7 @@
   },
   "devDependencies": {
     "@tailwindcss/line-clamp": "^0.4.0",
-    "autoprefixer": "^10.4.7",
+    "autoprefixer": "^10.4.8",
     "postcss": "^8.4.14",
     "postcss-nesting": "^10.1.10",
     "sass": "^1.53.0",

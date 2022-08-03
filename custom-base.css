@@ -61,9 +61,6 @@
     li {
         
     }
-    img {
-        @apply max-w-[48.75rem] rounded-[2rem] m-auto;
-    }
     a {
         @apply text-primary text-lg;
 

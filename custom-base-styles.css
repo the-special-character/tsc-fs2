@@ -1,27 +1,113 @@
 @layer base {
     body {
-        @apply font-sans text-base;
-    }
+    @apply font-sans text-lg text-neutral-600;
+  }
 
-    h1 {
-        @apply font-serif text-6xl sm:text-8xl md:text-9xl lg:text-10xl;
-    }
+  h1 {
+    @apply font-serif mb-6 text-neutral-800 text-6xl sm:text-8xl md:text-9xl lg:text-10xl font-semibold;
+  }
 
-    h2 {
-        @apply font-serif text-4xl sm:text-5xl md:text-7xl lg:text-7xl;
-    }
-    h3 {
-        @apply font-serif text-xl sm:text-xxl md:text-3xl lg:text-3xl;
-    }
-    h4 {
-        @apply font-serif text-lg sm:text-xl md:text-xl lg:text-xl;
-    }
-    h5 {
-        @apply font-serif text-base sm:text-lg md:text-lg lg:text-lg;
-    }
-    h6 {
-        @apply font-serif text-xs sm:text-base md:text-base lg:text-base;
-    }
+  h2 {
+    @apply font-serif text-4xl mb-4 text-neutral-800 sm:text-5xl md:text-7xl font-semibold;
+  }
+
+  h3 {
+    @apply text-neutral-700 text-xl sm:text-xxl md:text-3xl font-bold;
+  }
+
+  h4 {
+    @apply text-neutral-700 text-lg sm:text-xl font-bold;
+  }
+
+  h5 {
+    @apply text-neutral-800 text-base sm:text-lg font-semibold;
+  }
+
+  h6 {
+    @apply text-neutral-800 text-xs sm:text-base font-semibold;
+  }
+
+  p {
+    @apply mb-5;
+  }
+
+  p.small {
+    @apply text-sm;
+  }
+
+  p.large {
+    @apply text-3xl;
+  }
+
+  a {
+    @apply text-primary underline;
+    -webkit-transition: color 300ms ease;
+    transition: color 300ms ease;
+  }
+
+  label {
+    @apply block mb-4 text-neutral-700 font-bold;
+  }
+
+  a:hover {
+    @apply text-secondary3;
+  }
+
+  blockquote {
+    @apply mb-2 shadow-quote bg-neutral-100 text-lg py-10 px-5 sm:py-12 sm:px-[50px] md:py-[58px] md:px-[63px] lg:py-[70px] lg:pr-[76px] lg:pl-[126px] sm:text-xl md:text-xxl lg:text-3xl;
+    border-radius: 10px 20px 20px 10px;
+    border-left: 11px solid theme('colors.secondary3');
+  }
+
+  figure {
+    @apply mb-2;
+  }
+
+  figcaption {
+    @apply mt-1 text-center;
+  }
+
+  strong {
+    @apply font-bold;
+  }
+
+  em {
+    @apply italic;
+  }
+
+  ol {
+    @apply mt-0 mb-2 pl-10;
+  }
+
+  ul {
+    @apply mt-0 mb-2 pl-10;
+  }
+
+  li {
+    @apply mb-4;
+  }
+
+  img {
+    @apply inline-block max-w-full align-middle;
+  }
+
+  code {}
+
+  pre {}
+
+  video {}
+
+  hr {}
+
+  table {}
+
+  thead {}
+
+  tr {}
+
+  th {}
+
+  td {}
 
     nav {
         & ul {

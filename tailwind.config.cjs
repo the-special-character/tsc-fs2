@@ -41,7 +41,8 @@ module.exports = {
       "sans": ['Kumbh Sans', "sans-serif"],
     },
     boxShadow: {
-      "header": "0 6px 12px 0 rgb(6 43 86 / 4%)"
+      "header": "0 6px 12px 0 rgb(6 43 86 / 4%)",
+      "quote": "0 5px 15px 0 rgb(30 61 96 / 3%)"
     },
     extend: {
       aspectRatio: {

@@ -1,0 +1,42 @@
+@layer components{
+
+    #perks{
+        @apply relative py-44 bg-neutral-700;
+
+        & > .perks__wrapper{
+            @apply container h-full flex flex-col justify-around;
+
+            & > h2{
+                @apply text-neutral-100 pb-14 mx-auto;
+            }
+
+            & > .perks__items{
+                @apply flex flex-wrap gap-4;
+
+                & > .perk__item{
+                    @apply flex flex-col mx-auto items-center max-w-[340px];
+                    
+                    & > img{
+                        @apply pb-10;
+                    }
+
+                    & > .perk__content{
+                        @apply flex flex-col text-center items-center;
+
+                        & > h3{
+                            @apply text-neutral-100 pb-4;
+                        }
+
+                        & > p{
+                            @apply text-neutral-300;
+                        }
+                    }
+                }
+            }
+        }
+
+        & > .arrow{
+            @apply absolute -bottom-24 right-1/2;
+        }
+    }
+}

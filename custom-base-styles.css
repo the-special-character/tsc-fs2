@@ -1,5 +1,5 @@
 @layer base {
-    body {
+  body {
     @apply font-sans text-lg text-neutral-600;
   }
 
@@ -56,7 +56,7 @@
   blockquote {
     @apply mb-2 shadow-quote bg-neutral-100 text-lg py-10 px-5 sm:py-12 sm:px-[50px] md:py-[58px] md:px-[63px] lg:py-[70px] lg:pr-[76px] lg:pl-[126px] sm:text-xl md:text-xxl lg:text-3xl;
     border-radius: 10px 20px 20px 10px;
-    border-left: 11px solid theme('colors.secondary3');
+    border-left: 11px solid theme("colors.secondary3");
   }
 
   figure {
@@ -91,46 +91,51 @@
     @apply inline-block max-w-full align-middle;
   }
 
-  code {}
+  code {
+  }
 
-  pre {}
+  pre {
+  }
 
-  video {}
+  video {
+  }
 
-  hr {}
+  hr {
+  }
 
-  table {}
+  table {
+  }
 
-  thead {}
+  thead {
+  }
 
-  tr {}
+  tr {
+  }
 
-  th {}
+  th {
+  }
 
-  td {}
+  td {
+  }
 
-    nav {
-        & ul {
-            @apply flex gap-10;
-            & li {
-                @apply text-neutral-700;
+  nav {
+    & ul {
+      @apply flex gap-10;
+      & li {
+        @apply text-neutral-700;
 
-                &:hover {
-                    @apply text-secondary3;
-                }
-
-                & a {
-                    @apply font-sans font-bold text-lg;
-                }
-
-                
-            }
+        &:hover {
+          @apply text-secondary3;
         }
+
+        & a {
+          @apply font-sans font-bold text-lg;
+        }
+      }
     }
+  }
 
-    section {
-        @apply h-screen
-    }
-
-
+  section {
+    @apply min-h-screen overflow-hidden;
+  }
 }

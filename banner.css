@@ -1,0 +1,38 @@
+@layer components {
+  #banner {
+    @apply py-20 relative;
+
+    & > .bgPanel {
+        @apply absolute top-0 right-0 w-1/3 h-full bg-primary -z-20;
+    }
+
+    & > .banner__wrapper {
+      @apply container h-full flex flex-wrap gap-20 relative;
+
+      & > div {
+        flex: 1 1 300px;
+      }
+
+      & div.banner__content {
+        @apply flex flex-col justify-center;
+
+        & > h1 {
+            @apply mb-6;
+        }
+
+        & > p {
+            @apply mb-14;
+        }
+
+        & div.banner__buttons {
+          @apply flex gap-6;
+        }
+      }
+
+      & div.banner__image {
+        @apply overflow-hidden rounded-2xl
+      }
+
+    }
+  }
+}

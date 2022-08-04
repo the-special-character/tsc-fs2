@@ -136,6 +136,6 @@
   }
 
   section {
-    @apply min-h-screen overflow-hidden;
+    @apply min-h-screen overflow-hidden py-20 relative;
   }
 }

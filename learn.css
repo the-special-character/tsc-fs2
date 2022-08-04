@@ -28,7 +28,7 @@
                     }
 
                     &>p{
-                        @apply text-neutral-100 line-clamp-3 ;
+                        @apply text-neutral-100 text-justify line-clamp-3 ;
                     }
                 }
             }

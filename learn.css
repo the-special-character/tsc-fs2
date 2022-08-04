@@ -1,0 +1,39 @@
+@layer components{
+    #learn{
+        @apply py-32 bg-neutral-800  ;
+
+        & > .learn__wrapper{
+            @apply h-full container flex flex-col  gap-14 ;
+
+            & div.learn__content{
+                @apply flex justify-center items-center;
+
+                &>h2{
+                    @apply text-neutral-100;
+                }
+            }
+            
+            & div.learn__card{
+                @apply flex  justify-center align-middle gap-28  flex-wrap  ;
+
+                &>div{
+                    @apply flex flex-col justify-center items-center w-80 ;
+
+                    &>img{
+                        @apply mb-9;
+                    }
+
+                    &>h3{
+                        @apply text-neutral-100 mb-4;
+                    }
+
+                    &>p{
+                        @apply text-neutral-100 line-clamp-3 ;
+                    }
+                }
+            }
+
+
+        }
+    }
+}

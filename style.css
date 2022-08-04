@@ -4,5 +4,6 @@
 @import "tailwindcss/components";
 @import "./common.css";
 @import "./header.css";
+@import "./banner.css";
 
 @import "tailwindcss/utilities";

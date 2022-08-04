@@ -1,6 +1,6 @@
 @layer components {
     .btn {
-        @apply p-5 rounded-full font-bold transition-all duration-300 ease-linear;    
+        @apply px-12 py-5 rounded-full font-bold transition-all duration-300 ease-linear uppercase;     
  
         &.btn--primary {
             @apply bg-primary text-neutral-100
@@ -42,6 +42,18 @@
         @apply flex items-center gap-2 font-bold text-lg text-neutral-800;
         & span {
             @apply max-w-xs line-clamp-1;
+        }
+    }
+
+    .bg {
+        @apply absolute w-[640px] aspect-square -z-10 rounded-full;
+
+        &.tl {
+            @apply top-[-464px] left-[-559px] bg-secondary2;
+        }
+
+        &.br {
+            @apply bottom-[-507px] right-[-474px] bg-secondary3;
         }
     }
 

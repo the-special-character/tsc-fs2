@@ -36,6 +36,16 @@ module.exports = {
       sm: ["15px", "1.6em"],
       xs: ["14px", "1.5em"],
     },
+    container: {
+      center: true,
+      screens: {
+        "sm": "1280px"
+      },
+      padding: {
+        DEFAULT: '1rem',
+        sm: '1.5rem'
+      }
+    },
     fontFamily: {
       "serif": ['Newsreader', "serif"],
       "sans": ['Kumbh Sans', "sans-serif"],

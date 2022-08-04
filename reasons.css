@@ -8,11 +8,10 @@
             }
 
             & > div.reason_wrapper {
-                @apply flex flex-wrap gap-10 justify-between;
-                & > div.reason {
+                @apply flex flex-col gap-10 justify-between sm:flex-row;
+                /* & > div.reason {
                     @apply content-center;
-                    width: 300px;
-                }
+                } */
             }
         }
     }

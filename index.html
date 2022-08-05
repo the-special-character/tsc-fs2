@@ -1,72 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <!-- <link rel="icon" href="/favicon.ico"> -->
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
 
-    <link rel="stylesheet" href="./style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;600;700&family=Newsreader:opsz,wght@6..72,600&display=swap"
-      rel="stylesheet"
-    />
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <!-- <link rel="icon" href="/favicon.ico"> -->
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vite App</title>
 
-  <body>
-    <header class="header">
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;600;700&family=Newsreader:opsz,wght@6..72,600&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body>
+  <header class="header">
+    <div>
       <div>
-        <div>
-          <h3>Logo</h3>
+        <h3>Logo</h3>
+      </div>
+      <nav>
+        <ul>
+          <li>
+            <a href="#">Item 1</a>
+          </li>
+          <li>
+            <a href="#">Item 1</a>
+          </li>
+          <li>
+            <a href="#">Item 1</a>
+          </li>
+          <li>
+            <a href="#">Item 1</a>
+          </li>
+          <li>
+            <a href="#">Item 1</a>
+          </li>
+        </ul>
+      </nav>
+      <div>
+        <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 0 48 48">
+          <path
+            d="M9 44q-1.2 0-2.1-.9Q6 42.2 6 41V14.5q0-1.2.9-2.1.9-.9 2.1-.9h5.5q0-3.95 2.65-6.725Q19.8 2 23.75 2q3.95 0 6.85 2.775 2.9 2.775 2.9 6.725H39q1.2 0 2.1.9.9.9.9 2.1V41q0 1.2-.9 2.1-.9.9-2.1.9Zm0-3h30V14.5H9V41Zm15-14.5q3.95 0 6.85-2.9 2.9-2.9 2.9-6.85h-3q0 2.75-2 4.75t-4.75 2q-2.75 0-4.75-2t-2-4.75h-3q0 3.95 2.9 6.85 2.9 2.9 6.85 2.9Zm-6.5-15h13q0-2.75-1.875-4.625T24 5q-2.75 0-4.625 1.875T17.5 11.5ZM9 41V14.5 41Z" />
+        </svg>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section id="banner">
+      <div class="bgPanel"></div>
+      <div class="banner__wrapper">
+        <div class="banner__content">
+          <h1>Grow your skills, define your future</h1>
+          <p>Presenting Academy, the tech school of the future. We teach you the right skills to be prepared for
+            tomorrow.</p>
+          <div class="banner__buttons">
+            <button class="btn btn--primary">Explore Courses</button>
+            <button class="btn btn--secondary">Learn More</button>
+          </div>
         </div>
-        <nav>
-          <ul>
-            <li>
-              <a href="#">Item 1</a>
-            </li>
-            <li>
-              <a href="#">Item 1</a>
-            </li>
-            <li>
-              <a href="#">Item 1</a>
-            </li>
-            <li>
-              <a href="#">Item 1</a>
-            </li>
-            <li>
-              <a href="#">Item 1</a>
-            </li>
-          </ul>
-        </nav>
-        <div>
-          <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 0 48 48" ><path d="M9 44q-1.2 0-2.1-.9Q6 42.2 6 41V14.5q0-1.2.9-2.1.9-.9 2.1-.9h5.5q0-3.95 2.65-6.725Q19.8 2 23.75 2q3.95 0 6.85 2.775 2.9 2.775 2.9 6.725H39q1.2 0 2.1.9.9.9.9 2.1V41q0 1.2-.9 2.1-.9.9-2.1.9Zm0-3h30V14.5H9V41Zm15-14.5q3.95 0 6.85-2.9 2.9-2.9 2.9-6.85h-3q0 2.75-2 4.75t-4.75 2q-2.75 0-4.75-2t-2-4.75h-3q0 3.95 2.9 6.85 2.9 2.9 6.85 2.9Zm-6.5-15h13q0-2.75-1.875-4.625T24 5q-2.75 0-4.625 1.875T17.5 11.5ZM9 41V14.5 41Z"/></svg>
+        <div class="banner__image">
+          <img
+            src="https://assets.website-files.com/607de2d8e8911e32707a3efe/607e15d7c0c9f4037bde6f44_image-home-hero-education-x-template-p-800.jpeg"
+            alt="banner image">
+        </div>
+
+        <div class="bg tl"></div>
+        <div class="bg br"></div>
+
+      </div>
+    </section>
+  </main>
+  <section id="banner-2" class=" bg-neutral-700 flex justify-center items-center text-center">
+    <div class="flex flex-col items-center container py-44">
+      <h2 class=" text-wh mb-16">Why learn with our courses?</h2>
+
+      <div class=" flex justify-around items-center gap-[254px] text-wh mt-5">
+        <div class=" flex-1">
+          <img
+            src="https://assets.website-files.com/607de2d8e8911e32707a3efe/607e21e810beff7a8011b340_image-1-perks-education-x-template.svg"
+            alt="" srcset="" height="233px" width="233px">
+          <div class=" flex flex-col justify-center items-center text-center">
+            <h3 class=" text-wh mb-5 mt-6">1. Learn</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur dolorili adipiscing elit. Felis donec massa aliqua.</p>
+          </div>
+        </div>
+
+        <div class=" flex-1">
+          <img
+            src="https://assets.website-files.com/607de2d8e8911e32707a3efe/607e21e8936529d4f0ebfe91_image-2-perks-education-x-template.svg"
+            alt="" srcset="" height="233px" width="233px">
+          <div class=" flex flex-col justify-center items-center text-center">
+            <h3 class=" text-wh mb-5 mt-6">2. Graduate</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur dolorili adipiscing elit. Felis donec massa aliqua.</p>
+          </div>
+        </div>
+
+        <div class=" flex-1">
+          <img
+            src="https://assets.website-files.com/607de2d8e8911e32707a3efe/607e21e8c0c9f4644adea00a_image-3-perks-education-x-template.svg"
+            alt="" srcset="">
+          <div class=" flex flex-col justify-center items-center text-center">
+            <h3 class=" text-wh mb-5 mt-6">3. Work</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur dolorili adipiscing elit. Felis donec massa aliqua.</p>
+          </div>
         </div>
       </div>
-    </header>
-    <main>
-      <section id="banner">
-        <div class="bgPanel"></div>
-        <div class="banner__wrapper">
-          <div class="banner__content">
-            <h1>Grow your skills, define your future</h1>
-            <p>Presenting Academy, the tech school of the future. We teach you the right skills to be prepared for tomorrow.</p>
-            <div class="banner__buttons">
-              <button class="btn btn--primary">Explore Courses</button>
-              <button class="btn btn--secondary">Learn More</button>
-            </div>
-          </div>
-          <div class="banner__image">
-            <img src="https://assets.website-files.com/607de2d8e8911e32707a3efe/607e15d7c0c9f4037bde6f44_image-home-hero-education-x-template-p-800.jpeg" alt="banner image">
-          </div>
 
-          <div class="bg tl"></div>
-          <div class="bg br"></div>
-          
-        </div>
-      </section>
-    </main>
-  </body>
+    </div>
+  </section>
+
+</body>
+
 </html>

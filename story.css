@@ -1,0 +1,29 @@
+@layer components {
+    #story {
+        @apply py-[184px] h-full;
+        & > div.story__wrapper {
+            @apply  container h-full flex gap-7 m-auto justify-center flex-wrap-reverse relative;
+            & div.story__content {
+                @apply w-[754px] flex flex-col lg:w-[552px] overflow-hidden ;
+                &div.story__content:nth-child(1) {
+                    @apply flex-col-reverse lg:flex-col;
+                }
+            
+                & div.story_content_image {
+                    &>img {
+                        @apply rounded-3xl;
+                    }
+                }
+                & div.story_content_desc {
+                    @apply flex flex-col justify-center flex-1 p-5;
+                   &div.story_content_desc:nth-child(2) {
+                    @apply mt-44;
+                   }
+                } 
+            }
+            & > div.bg_wrapper {
+                @apply absolute lg:min-w-[494px] aspect-square top-auto left-auto right-auto bottom-[15.625em] bg-secondary2 rounded-full -z-10;
+            }
+        }
+    }
+}

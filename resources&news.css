@@ -1,0 +1,57 @@
+@layer componenets{
+    #resources{
+        
+        & > .resource{
+            @apply container flex-wrap;
+
+            & > .resource__hb{
+                @apply flex flex-wrap justify-between sm:items-center sm:flex-wrap lg:flex-nowrap mb-10 md:mb-12 lg:mb-14;
+            }
+
+            & > .resource__content{
+                @apply flex flex-col lg:flex-row flex-1 gap-6 m-4;
+
+                & > .left-content{
+                    
+
+                    & > .card{
+                        @apply shadow-quote rounded-2xl overflow-hidden flex flex-col;
+
+                        & > .card-body{
+                            @apply pb-10 pt-8 px-6 sm:pt-10 sm:pb-11 sm:px-7 md:pt-12 md:pb-14;
+
+                            & > .card-date{
+                                @apply mb-3 sm:mb-4 line-clamp-1 sm:line-clamp-1;
+                            }
+
+                            & > .card-title{
+                                @apply text-xl sm:text-xxl md:text-3xl lg:text-3xl;
+                            }
+
+                            &:last-child{
+                                @apply pb-0;
+                            }
+                        }
+                    }
+                }
+
+                & > .right-content{
+                    @apply flex-col;
+
+                    & > .card1{
+                       @apply shadow-quote rounded-2xl overflow-hidden md:flex lg:flex;
+
+                       & > .card-body{
+                        @apply p-6 sm:p-7 md:px-7 md:py-6;
+                       }
+
+                       & > .card-title{
+                        @apply text-lg sm:text-xl md:text-xl lg:text-xl;
+                       }
+                    }
+                }
+
+            }
+        }
+    }
+}

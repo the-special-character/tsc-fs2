@@ -56,7 +56,7 @@ module.exports = {
     },
     extend: {
       aspectRatio: {
-        image: '4 / 3',
+        image: '3 / 2',
       }
     },
   },

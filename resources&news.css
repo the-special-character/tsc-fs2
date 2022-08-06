@@ -6,10 +6,11 @@
 
             & > .resource__hb{
                 @apply flex flex-wrap justify-between sm:items-center sm:flex-wrap lg:flex-nowrap mb-10 md:mb-12 lg:mb-14;
+            
             }
 
             & > .resource__content{
-                @apply flex flex-col lg:flex-row flex-1 gap-6 m-4;
+                @apply flex flex-col lg:flex-row gap-6 m-4;
 
                 & > .left-content{
                     
@@ -36,19 +37,28 @@
                 }
 
                 & > .right-content{
-                    @apply flex-col;
+                    @apply flex-col  md:flex-col md:justify-center md:items-center;
 
                     & > .card1{
-                       @apply shadow-quote rounded-2xl overflow-hidden md:flex lg:flex;
+                       @apply shadow-quote flex-auto rounded-2xl overflow-hidden md:mb-4 md:flex lg:flex;
 
                        & > .card-body{
                         @apply p-6 sm:p-7 md:px-7 md:py-6;
+
+                        & > .card-title{
+                            @apply text-lg sm:text-xl md:text-xl lg:text-xl;
+                           }
+
+                           & > .card-image{
+                            @apply w-full h-full;
+                          }
+
                        }
 
-                       & > .card-title{
-                        @apply text-lg sm:text-xl md:text-xl lg:text-xl;
-                       }
+                       
+
                     }
+
                 }
 
             }

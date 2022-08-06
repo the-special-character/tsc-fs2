@@ -1,0 +1,18 @@
+@layer components{
+    #row_card{
+        @apply bg-neutral-200;
+    }
+    .row_card{
+        @apply flex justify-center items-center rounded-2xl shadow-header pl-[56px] pr-[56px] pt-[90px] pb-[86px] max-w-[765px]; 
+        
+     }
+ 
+     .img{
+         @apply w-[203px] min-h-[203px] min-w-[203px] max-w-full rounded-full mr-8 align-middle;
+ 
+     }
+     .img_star{ 
+         @apply max-w-full mb-[22px];
+     }
+     
+}

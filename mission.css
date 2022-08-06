@@ -1,0 +1,29 @@
+@layer components {
+    #mission {
+        @apply py-44 h-full;
+        & > div.mission__wrapper {
+            @apply  container h-full flex gap-14 m-auto justify-center flex-wrap-reverse relative;
+            & div.mission__content {
+                @apply w-[754px] flex flex-col lg:w-[552px] overflow-hidden ;
+                &div.mission__content:nth-child(1) {
+                    @apply flex-col-reverse lg:flex-col;
+                }
+            
+                & div.mission_content_image {
+                    &>img {
+                        @apply rounded-3xl;
+                    }
+                }
+                & div.mission_content_desc {
+                    @apply flex flex-col justify-center flex-1 p-5;
+                   &div.mission_content_desc:nth-child(2) {
+                    @apply mt-44;
+                   }
+                } 
+            }
+            & > div.bg_wrapper {
+                @apply absolute lg:min-w-[494px] aspect-square top-auto left-auto right-auto bottom-[15.625em] bg-secondary2 rounded-full -z-10;
+            }
+        }
+    }
+}

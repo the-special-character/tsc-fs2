@@ -1,0 +1,42 @@
+@layer components{
+
+    #teachers{
+        @apply py-44 bg-neutral-300;
+        
+        & > div.container{
+            @apply flex flex-col items-center ;
+            
+            & > .teachers__top{
+                @apply  flex flex-col items-center text-center mb-14 flex-wrap lg:justify-between lg:gap-28 lg:flex-row lg:text-justify;
+
+                & > div.teachers__top-left{
+                    @apply flex-1 max-w-[495px];
+                }
+               
+                & > div.teachers__top-right{
+                    @apply max-w-fit;
+                }
+            }
+
+            & > .teachers__grid{
+                @apply grid grid-cols-1 max-w-lg gap-6 gap-y-6 md:grid-cols-2 md:max-w-fit lg:grid-cols-3 lg:max-w-fit;
+                            
+                & > .card{
+                    @apply rounded-3xl overflow-hidden  min-w-[320px];
+
+                    & > .card__content{
+                        @apply p-8 pb-12;
+
+                        & > .card__social{
+                    
+                        }
+                    }
+                }
+            }
+        }
+       
+
+
+    }
+
+}

@@ -2,10 +2,10 @@
     .container{
         @apply text-center;
     }
-    .container >  h2 {
+    .container >h2 {
         @apply font-serif text-4xl mb-4 text-neutral-800 sm:text-5xl md:text-7xl font-semibold;
         & p{ 
-            @apply mb-14;
+            @apply mb-14 w-6 h-8;
         }
       }
     

@@ -2,6 +2,13 @@
     .base{
         @apply text-center;
     }
+    & .main{
+        @apply flex gap-2;
+    }
+    & div.image__wrapper {
+        @apply overflow-hidden rounded-2xl;
+
+    }
     
         
 }

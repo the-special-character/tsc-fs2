@@ -1,0 +1,28 @@
+@layer components{
+    #aboutedu{
+        @apply h-auto w-auto;
+    }
+    .base{
+        @apply text-center;
+    }
+    & .main{
+        @apply flex-row;
+    
+        /* & .image__wrapper{
+        @apply h-5 w-8 pl-8 rounded-2xl ;
+
+     } */
+    }
+    & .home-about-details{
+        @apply md:flex;
+        & .home-about-content{
+            @apply text-center flex-col;
+            &> h3{
+                @apply text-neutral-700;
+            }
+        }
+    }
+    
+        
+}
+    

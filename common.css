@@ -55,6 +55,21 @@
         &.br {
             @apply bottom-[-507px] right-[-474px] bg-secondary3;
         }
+
     }
+
+    .cta_card {
+        @apply rounded-3xl aspect-cimage w-full max-w-xs  bg-neutral-100 mb-5 pt-10 pb-6 px-6 text-center sm:aspect-square sm:text-center sm:max-w-[235px] sm:pt-12 sm:pb-10 sm:px-7;
+        
+        &>h3{
+            @apply text-7xl pb-[6px] sm:text-[45px] md:text-[45px] font-serif;
+        }
+
+        &>p{
+            @apply text-center line-clamp-2 font-sans;
+        }
+    }
+    
+
 
 }

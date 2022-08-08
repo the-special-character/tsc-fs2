@@ -20,6 +20,12 @@ module.exports = {
         800: '#1E3D60',
       }
     },
+    screen: {
+      xs: "320px",
+      sm: "640px",
+      md: "768px",
+      lg: "1024px",
+    },
     fontSize: {
       "10xl": ["60px", "1.3em"],
       "9xl": ["50px", "1.3em"],
@@ -57,7 +63,9 @@ module.exports = {
     extend: {
       aspectRatio: {
         image: '4 / 3',
+        cimage: '2/1',
       }
+
     },
   },
   plugins: [

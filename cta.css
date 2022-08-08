@@ -1,0 +1,39 @@
+@layer components{
+
+   
+
+    #cta{
+        @apply relative bg-primary flex flex-col justify-center h-[1036px] py-[60px] sm:py-[60px] sm:h-[853px] md:py-[70px] md:h-[927px] lg:py-[88px] lg:h-[625px];
+
+        &>.cta_container{
+            @apply container h-fit  lg:flex lg:justify-between lg:items-center relative ;
+
+            
+            &>.content{
+                @apply  flex flex-col justify-center items-center mb-[50px] md:mb-[60px] lg:max-w-lg;
+
+                &>h2{
+                    @apply text-center text-neutral-100 mb-[10px] sm:mb-4 ;
+                }
+                &>p{
+                    @apply text-center text-neutral-100 mb-[30px] md:mb-[35px] lg:mb-[38px];
+                }
+
+                &>.explore{
+                    @apply max-w-xs;
+                }
+            }
+            &>.card{
+                @apply flex flex-col justify-center items-center sm:flex-row;
+
+                &>.card_container1{
+                    @apply flex flex-col justify-center items-center lg:min-w-[235px];
+                }
+
+                &>.card_container2{
+                    @apply w-full max-w-xs flex flex-col justify-center items-center sm:pr-12 lg:ml-4 lg:min-w-[235px];
+                }
+            }
+        }
+    }
+}

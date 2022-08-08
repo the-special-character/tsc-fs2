@@ -1,0 +1,25 @@
+@layer components {
+  #work_values {
+    @apply bg-neutral-700;
+
+    &>div.work_values_container {
+      @apply container;
+
+      &>.heading{
+
+        &>h3 {
+          @apply flex justify-center text-secondary1;
+        }
+        &>p{
+          @apply text-center text-secondary1 ;
+        }
+
+      }
+      
+      &>.content{
+        @apply flex flex-col md:flex-row md:gap-5 md:justify-center lg:flex-row lg:gap-5 lg:justify-center;
+      }
+    }
+
+  }
+}

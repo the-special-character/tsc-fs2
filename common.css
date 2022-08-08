@@ -30,6 +30,22 @@
             transform: scale3d(0.96, 0.96, 1.01);
         }
     }
+    .work_card{
+        @apply aspect-cimage w-full bg-neutral-200 mb-5 rounded-2xl px-[25px] py-[33px] sm:aspect-vimage sm:w-full sm:px-[33px] sm:py-[40px] md:aspect-square  md:max-w-[360px] md:px-[40px] md:py-[40px] lg:aspect-image lg:max-w-[460px] lg:px-[48px] lg:py-[48px]; 
+        &>.card_icon{
+            @apply flex justify-between items-center mb-[25px] sm:mb-[30px] md:mb-[35px] lg:mb-[40px];
+
+            &>span{
+                @apply text-neutral-700 w-[80px] h-[50px] pl-7 pt-2  rounded-full border-2 border-neutral-700 border-opacity-10;
+            }
+            &>img{
+                @apply rounded-full;
+            }
+        }
+        &>h3{
+            @apply mb-2 sm:mb-[10px] md:mb-[14px] lg:mb-[14px];
+        }
+    }
 
     .avatar {
         @apply w-14 aspect-square rounded-full;

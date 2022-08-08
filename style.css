@@ -6,5 +6,6 @@
 @import "./header.css";
 @import "./banner.css";
 @import "./reasons.css";
+@import "./work_values.css";
 
 @import "tailwindcss/utilities";

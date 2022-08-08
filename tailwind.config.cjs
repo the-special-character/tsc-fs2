@@ -20,6 +20,12 @@ module.exports = {
         800: '#1E3D60',
       }
     },
+    screens: {
+      xs: "320px",
+      sm: "640px",
+      md: "768px",
+      lg: "1024px",
+    },
     fontSize: {
       "10xl": ["60px", "1.3em"],
       "9xl": ["50px", "1.3em"],
@@ -38,8 +44,9 @@ module.exports = {
     },
     container: {
       center: true,
-      screens: {
+      screens: { 
         "sm": "1280px"
+        
       },
       padding: {
         DEFAULT: '1rem',
@@ -57,6 +64,8 @@ module.exports = {
     extend: {
       aspectRatio: {
         image: '4 / 3',
+        cimage:'3/4',
+        vimage:'4/2',
       }
     },
   },

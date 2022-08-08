@@ -1,8 +1,8 @@
 @layer components {
     .header {
-        @apply py-7 shadow-header z-10;
+        @apply py-7 shadow-header z-10 w-full;
         & > div {
-            @apply flex justify-between items-center container;
+            @apply w-full flex justify-between items-center flex-1 flex-wrap;
         }
     }
 }

@@ -18,7 +18,7 @@ module.exports = {
         600: '#62778F',
         700: '#1E3D60',
         800: '#1E3D60',
-      }
+      },
     },
     fontSize: {
       "10xl": ["60px", "1.3em"],
@@ -57,6 +57,7 @@ module.exports = {
     extend: {
       aspectRatio: {
         image: '4 / 3',
+        vimage: '3 / 4',
       }
     },
   },

@@ -20,6 +20,12 @@ module.exports = {
         800: '#1E3D60',
       }
     },
+    screens: {
+      xs: "320px",
+      sm: "640px",
+      md: "760px",
+      lg: "1024px",
+    },
     fontSize: {
       "10xl": ["60px", "1.3em"],
       "9xl": ["50px", "1.3em"],
@@ -36,12 +42,24 @@ module.exports = {
       sm: ["15px", "1.6em"],
       xs: ["14px", "1.5em"],
     },
+    container: {
+      center: true,
+      screens: {
+        "sm": "1280px"
+      },
+      padding: {
+        DEFAULT: '1rem',
+        sm: '1.5rem'
+      }
+    },
     fontFamily: {
       "serif": ['Newsreader', "serif"],
       "sans": ['Kumbh Sans', "sans-serif"],
     },
     boxShadow: {
-      "header": "0 6px 12px 0 rgb(6 43 86 / 4%)"
+      'base': ['0 0 10px 10px rgba(0, 0, 0, 0.3)'],
+      "header": ["0 6px 12px 0 rgb(6 43 86 / 4%)"],
+      "quote": ["0 5px 15px 0 rgb(30 61 96 / 3%)"],
     },
     extend: {
       aspectRatio: {

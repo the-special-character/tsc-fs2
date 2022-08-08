@@ -1,0 +1,53 @@
+@layer components{
+    .banner2section{
+        @apply max-h-fit;
+    }
+    .banner2{
+        @apply container flex-wrap md:flex md:flex-nowrap py-10 max-h-fit ;
+
+        /* & > div {
+           flex: 1 1 1000px;
+          } */
+    }
+
+    .banner2first{
+        @apply flex flex-col justify-center items-center text-center md:items-start md:text-start;
+
+        & > h2{
+            @apply text-neutral-700;
+        }
+    }
+    
+    .banner2second{
+        @apply flex flex-col relative items-center pb-32;
+
+        & > img{
+            @apply rounded-2xl
+        }
+    }
+
+    .banner2btn{
+        @apply flex flex-col gap-4 py-7;
+    }
+
+    .cardsecond {
+        @apply w-5/6 absolute top-2/3 bg-neutral-100 z-10 m-4 shadow-header rounded-2xl overflow-hidden;
+
+        & > .card__body {
+            @apply pt-8 px-6 pb-10 sm:px-10 sm:pt-9 md:p-8 md:pt-11;
+
+        & > .card__titletwo {
+            @apply text-3xl my-5 text-neutral-700 font-bold mb-3;
+        }    
+        & > .card__desctwo {
+            @apply text-lg text-neutral-600 mb-4 line-clamp-1;
+        }    
+
+        & > .card__circle{
+            @apply flex min-w-fit max-h-fit w-2/4 items-start bg-secondary1 px-8 py-2 rounded-full justify-center text-primary;
+        }  
+           
+        }
+    }
+
+}

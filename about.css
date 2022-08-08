@@ -3,9 +3,11 @@
         @apply bg-neutral-200 p-44;
             & > .heading {
                  @apply mb-16;
+                 
+              
              }
                  & > .wrapper{
-                      @apply flex justify-between;
+                      @apply flex flex-wrap justify-between;
                           & > .about-us {
                             @apply text-center;
                                  & > .achivements{
@@ -15,4 +17,5 @@
 
                              }
                         }
+                    
                     }

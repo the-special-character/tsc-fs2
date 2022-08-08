@@ -125,8 +125,8 @@
           </div>
         </div>
       </section> -->
-      <section id="contact">
-        <form>
+      <section  id="contact">
+        <form oninput="result.value=parseInt(age.value)">
           <div>
             <label for="name">Email</label>
             <input type="email" id="name" autocomplete="email"  />
@@ -136,10 +136,79 @@
             <input type="password" id="password" autocomplete="new-password" required minlength="3"  />
           </div>
 
-          <div>
+          <!-- <div>
             <label for="age">Age</label>
             <input type="number" id="age" min="18"  />
-          </div>
+          </div> -->
+
+          <select>
+            <option value="">Please Select Gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+
+          <select>
+            <option value="">Please Select your favourite Hobby</option>
+            <optgroup label="Sports">
+              <option value="cricket">Cricket</option>
+              <option value="football">Football</option>
+              <option value="chess">Chess</option>  
+            </optgroup>
+            <optgroup label="Activity">
+              <option value="dancing">Dancing</option>
+              <option value="singing">Singing</option>
+            </optgroup>
+            
+          </select>
+
+          <input type="text" list="colleges">
+          <datalist id="colleges">
+            <option>Nirma</option>
+            <option>Sal</option>
+            <option>Silver Oak</option>
+            <option>Saffroni</option>
+          </datalist>
+
+          <fieldset>
+            <legend>Gender</legend>
+            <div>
+              <input type="radio" name="gender" id="male">
+              <label for="male">Male</label>
+            </div>
+            <div>
+              <input type="radio" name="gender" id="female">
+              <label for="female">Female</label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Favourite Sport</legend>
+            <div>
+              <input type="checkbox" name="sports" id="cricket">
+              <label for="cricket">Cricket</label>
+            </div>
+            <div>
+              <input type="checkbox" name="sports" id="football">
+              <label for="football">Football</label>
+            </div>
+            <div>
+              <input type="checkbox" name="sports" id="chess">
+              <label for="chess">Chess</label>
+            </div>
+          </fieldset>
+
+          <label for="fuel">Fuel level:</label>
+
+<meter id="fuel"
+       min="0" max="100"
+       low="33" high="66" optimum="80"
+       value="62">
+    at 50/100
+</meter>
+
+  <input type="range" name="age" id="age" value="50" min="0" max="100" step="10">
+  <output name="result" for="age">50</output>
+
           <button type="button">Submit</button>
           <button type="reset">Reset</button>
         </form>

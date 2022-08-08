@@ -1,0 +1,11 @@
+@layer components {
+    #resources {
+        @apply h-screen;
+        &>div.resource {
+            @apply container px-6 h-full bg-secondary2;
+            & > div.resource_news {
+                @apply flex justify-between items-center bg-secondary3 mb-14;
+            }
+        }
+    }
+}

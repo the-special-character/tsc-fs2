@@ -1,3 +1,18 @@
 @layer components {
-    
-}
+         #expained-form{
+        @apply bg-neutral-200 p-44;
+            & > .heading {
+                 @apply mb-16;
+             }
+                 & > .wrapper{
+                      @apply flex justify-between;
+                          & > .about-us {
+                            @apply text-center;
+                                 & > .achivements{
+                                     @apply text-secondary3 text-11xl mb-7 font-serif;
+                                                  }
+                                         }
+
+                             }
+                        }
+                    }

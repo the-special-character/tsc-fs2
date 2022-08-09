@@ -1,16 +1,28 @@
 @layer components{
 
+    
    
 
     #cta{
-        @apply relative bg-primary flex flex-col justify-center h-[1036px] py-[60px] sm:py-[60px] sm:h-[853px] md:py-[70px] md:h-[927px] lg:py-[88px] lg:h-[625px];
+        @apply  bg-primary flex flex-col justify-center h-auto py-[60px] sm:py-[60px] sm:h-[853px] md:py-[70px] md:h-[927px] lg:py-[88px] lg:h-[625px];
+
+        
 
         &>.cta_container{
-            @apply container h-fit  lg:flex lg:justify-between lg:items-center relative ;
+            @apply relative container h-fit  lg:flex lg:justify-between lg:items-center relative ;
+
+            &>.bg1{
+                @apply absolute z-10 bg-secondary2 aspect-square w-[214px] top-[30%] -left-[180px] sm:top-[20%] md:top-0 lg:w-[336px] rounded-full lg:-top-1/2 lg:-left-[275px] ;
+                }
+            &>.bg2{
+                @apply z-10 bg-secondary1 aspect-square w-[336px] -bottom-[350px] left-[30%] rounded-full absolute ;
+            }    
+
+               
 
             
             &>.content{
-                @apply  flex flex-col justify-center items-center mb-[50px] md:mb-[60px] lg:max-w-lg;
+                @apply z-30 flex flex-col justify-center items-center mb-[50px] md:mb-[60px] lg:max-w-lg;
 
                 &>h2{
                     @apply text-center text-neutral-100 mb-[10px] sm:mb-4 ;
@@ -24,16 +36,22 @@
                 }
             }
             &>.card{
-                @apply flex flex-col justify-center items-center sm:flex-row;
+                @apply z-20 relative flex flex-col justify-center items-center sm:flex-row;
 
                 &>.card_container1{
-                    @apply flex flex-col justify-center items-center lg:min-w-[235px];
+                    @apply z-20 flex flex-col justify-center items-center lg:min-w-[235px];
                 }
 
                 &>.card_container2{
-                    @apply w-full max-w-xs flex flex-col justify-center items-center sm:pr-12 lg:ml-4 lg:min-w-[235px];
+                    @apply z-20 w-full max-w-xs flex flex-col justify-center items-center sm:pr-12 lg:ml-4 lg:min-w-[235px];
                 }
+              
+                &>.bg3{
+                    @apply absolute  z-10 aspect-square w-[214px] sm:w-[268px] md:w-[335px]  rounded-full bg-secondary3;
+                }
+                
             }
         }
+
     }
 }

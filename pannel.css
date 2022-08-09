@@ -1,26 +1,26 @@
 @layer components {
     #pannel{
-        @apply flex font-sans min-h-screen text-lg justify-between;
+        @apply flex flex-wrap font-sans justify-between ;
         & > h2{
-            @apply mt-0 mb-7 text-4xl text-neutral-900 text-left; 
+            @apply mb-7 sm:text-center text-4xl text-neutral-900 ; 
         }
         & > div.category_course{
-
+            @apply flex flex-row;
             & > div.category_course_list{
-                @apply flex justify-between;
+                @apply flex justify-between ;
                 
                 & > div.category_course_list_items{
-                    @apply flex container;
+                    @apply flex flex-wrap;
                     & > div.category_course_list_item{
-                        @apply flex justify-between container;
+                        @apply flex;
                         & > a{
-                            @apply  justify-between pt-3 pb-4 pr-6 pl-6 no-underline;
+                            @apply  pt-3 pb-4 pr-6 pl-6 no-underline;
                             & > div.button_category{
-                                @apply flex flex-wrap aspect-auto text-neutral-700 pt-3 pb-4 pr-6 pl-6 rounded-full bg-neutral-300;
+                                @apply text-neutral-700 pt-3 pb-4 pr-6 pl-6 rounded-full bg-neutral-300;
                             }
                             
                             & > div.button_category:hover{
-                                @apply text-neutral-100 min-w-full pt-3 pb-4 pr-6 pl-6 rounded-full bg-neutral-800;
+                                @apply text-neutral-100  bg-neutral-800;
                             }
                         }
                     }

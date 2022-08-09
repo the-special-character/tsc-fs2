@@ -2,13 +2,13 @@
          #expained-form{
         @apply bg-neutral-200 p-44;
             & > .heading {
-                 @apply mb-16 h-max w-auto ;
+                 @apply mb-16 h-max line-clamp-2 ;
 
                          }
                  & > .wrapper{
                       @apply flex flex-wrap  justify-around ;
                           & > .about-us {
-                            @apply text-center sm:mb-16 w-72 justify-center;
+                            @apply text-center sm:mb-16 w-72 justify-center ;
                                  & > .achivements{
                                     @apply text-secondary3 text-5xl mb-7 font-serif md:text-8xl xl:text-11xl ;
                                      /* mobile landscape problem */

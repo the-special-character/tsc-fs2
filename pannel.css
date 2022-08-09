@@ -1,0 +1,32 @@
+@layer components {
+    #pannel{
+        @apply flex font-sans min-h-screen text-lg justify-between;
+        & > h2{
+            @apply mt-0 mb-7 text-4xl text-neutral-900 text-left; 
+        }
+        & > div.category_course{
+
+            & > div.category_course_list{
+                @apply flex justify-between;
+                
+                & > div.category_course_list_items{
+                    @apply flex container;
+                    & > div.category_course_list_item{
+                        @apply flex justify-between container;
+                        & > a{
+                            @apply  justify-between pt-3 pb-4 pr-6 pl-6 no-underline;
+                            & > div.button_category{
+                                @apply flex flex-wrap aspect-auto text-neutral-700 pt-3 pb-4 pr-6 pl-6 rounded-full bg-neutral-300;
+                            }
+                            
+                            & > div.button_category:hover{
+                                @apply text-neutral-100 min-w-full pt-3 pb-4 pr-6 pl-6 rounded-full bg-neutral-800;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}

@@ -8,7 +8,7 @@ module.exports = {
       primary: '#064EA4',
       secondary1: '#E1EDFB',
       secondary2: '#FCDF69',
-      secondary3: '#F99D77',
+      secondary3: '#F99D77',                         
       neutral: {
         100: '#FFFFFF',
         200: '#F9FAFB',
@@ -18,6 +18,7 @@ module.exports = {
         600: '#62778F',
         700: '#1E3D60',
         800: '#1E3D60',
+        900: '#0f437f',
       }
     },
     fontSize: {

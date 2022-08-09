@@ -17,7 +17,7 @@
       }
       
       &>.content{
-        @apply flex flex-col md:flex-row md:gap-5 md:justify-center lg:flex-row lg:gap-5 lg:justify-center;
+        @apply flex flex-col justify-center items-center md:flex-row md:gap-5 md:justify-center lg:flex-row lg:gap-5 lg:justify-center;
       }
     }
 

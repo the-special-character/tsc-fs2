@@ -31,12 +31,12 @@
         }
     }
     .work_card{
-        @apply aspect-cimage w-full bg-neutral-200 mb-5 rounded-2xl px-[25px] py-[33px] sm:aspect-vimage sm:w-full sm:px-[33px] sm:py-[40px] md:aspect-square  md:max-w-[360px] md:px-[40px] md:py-[40px] lg:aspect-image lg:max-w-[460px] lg:px-[48px] lg:py-[48px]; 
+        @apply aspect-cimage w-full bg-neutral-200 mb-5 rounded-2xl px-[25px] py-[33px] max-w-xs sm:aspect-vimage sm:w-full sm:px-[33px] sm:py-10 sm:max-w-[640px] md:aspect-square  md:max-w-[360px] md:px-10 md:py-10 lg:aspect-image lg:max-w-[460px] lg:px-12 lg:py-12; 
         &>.card_icon{
-            @apply flex justify-between items-center mb-[25px] sm:mb-[30px] md:mb-[35px] lg:mb-[40px];
+            @apply flex justify-between items-center mb-6 sm:mb-7 md:mb-8 lg:mb-10;
 
             &>span{
-                @apply text-neutral-700 w-[80px] h-[50px] pl-7 pt-2  rounded-full border-2 border-neutral-700 border-opacity-10;
+                @apply text-neutral-700 w-20 h-[50px] pl-7 pt-2  rounded-full border-2 border-neutral-700 border-opacity-10;
             }
             &>img{
                 @apply rounded-full;
@@ -44,6 +44,11 @@
         }
         &>h3{
             @apply mb-2 sm:mb-[10px] md:mb-[14px] lg:mb-[14px];
+
+        }
+        &>p{
+            @apply p-0;
+            
         }
     }
 

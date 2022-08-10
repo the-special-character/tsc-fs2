@@ -1,28 +1,19 @@
 @layer components{
     #aboutedu{
-        @apply h-auto w-auto;
-    }
-    .base{
-        @apply text-center;
-    }
-    & .main{
-        @apply flex-row;
-    
-        /* & .image__wrapper{
-        @apply h-5 w-8 pl-8 rounded-2xl ;
-
-     } */
-    }
-    & .home-about-details{
-        @apply md:flex;
-        & .home-about-content{
-            @apply text-center flex-col;
-            &> h3{
-                @apply text-neutral-700;
-            }
+        & .container{
+            @apply text-center sm:text-center md:text-center lg:text-center xl:text-center 2xl:text-center w-fit gap-y-3 mb-16;
+        } 
+        & .home-about-wrapper-img{
+            @apply h-3/6 w-6/12 pl-12 rounded-2xl md:flex-wrap md:flex-col-reverse;
         }
-    }
+        & .home-about-wrapper{
+            @apply flex gap-16;
+        }
+        & .split-content{
+            @apply mt-14 md:justify-center;
+        }
     
         
+        
+    }
 }
-    

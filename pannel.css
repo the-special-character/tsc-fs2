@@ -1,32 +1,17 @@
-@layer components {
-    #pannel{
-        @apply flex flex-wrap font-sans justify-between ;
-        & > h2{
-            @apply mb-7 sm:text-center text-4xl text-neutral-900 ; 
-        }
-        & > div.category_course{
-            @apply flex flex-row;
-            & > div.category_course_list{
-                @apply flex justify-between ;
-                
-                & > div.category_course_list_items{
-                    @apply flex flex-wrap;
-                    & > div.category_course_list_item{
-                        @apply flex;
-                        & > a{
-                            @apply  pt-3 pb-4 pr-6 pl-6 no-underline;
-                            & > div.button_category{
-                                @apply text-neutral-700 pt-3 pb-4 pr-6 pl-6 rounded-full bg-neutral-300;
-                            }
-                            
-                            & > div.button_category:hover{
-                                @apply text-neutral-100  bg-neutral-800;
-                            }
-                        }
-                    }
+
+@layer components{
+    .container{
+        & div.category-wrapper{
+            @apply text-neutral-900 flex flex-wrap justify-between font-sans;
+            & h3{
+                @apply mb-7 sm:items-center;
+            }
+            & div.categories{
+                @apply flex text-neutral-700  bg-neutral-100;
+                & a{
+                    @apply no-underline mr-7 pt-3 pb-4 pr-6 pl-6  text-neutral-700 shadow-header rounded-full hover:bg-primary hover:text-neutral-100  bg-neutral-100;
                 }
             }
         }
     }
-
 }

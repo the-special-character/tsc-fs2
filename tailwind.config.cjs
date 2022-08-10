@@ -54,9 +54,11 @@ module.exports = {
       "header": "0 6px 12px 0 rgb(6 43 86 / 4%)",
       "quote": "0 5px 15px 0 rgb(30 61 96 / 3%)"
     },
+    
     extend: {
       aspectRatio: {
-        image: '3 / 2',
+        image: '4 / 3',
+        nimage: '3 / 2'
       }
     },
   },

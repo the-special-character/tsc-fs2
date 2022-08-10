@@ -13,7 +13,7 @@
                 @apply flex flex-col lg:flex-row gap-6 m-4;
 
                 & > .left-content{
-                    
+                    @apply flex-1;
 
                     & > .card{
                         @apply shadow-quote rounded-2xl overflow-hidden flex flex-col;
@@ -37,25 +37,24 @@
                 }
 
                 & > .right-content{
-                    @apply flex-col  md:flex-col md:justify-center md:items-center;
+                    @apply flex-col flex-1 md:justify-center md:items-center;
 
                     & > .card1{
-                       @apply shadow-quote flex-auto rounded-2xl overflow-hidden md:mb-4 md:flex lg:flex;
+                       @apply shadow-quote rounded-2xl overflow-hidden md:mb-4 md:flex md:flex-1;
 
                        & > .card-body{
-                        @apply p-6 sm:p-7 md:px-7 md:py-6;
+                        @apply p-6 basis-4/5 md:px-7 md:py-6 items-center;
 
                         & > .card-title{
-                            @apply text-lg sm:text-xl md:text-xl lg:text-xl;
-                           }
+                            @apply text-lg sm:text-xl md:text-xl lg:text-xl line-clamp-3;
+                           } 
 
                            & > .card-image{
-                            @apply w-full h-full;
+                            @apply basis-1/5;
                           }
 
                        }
 
-                       
 
                     }
 

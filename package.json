@@ -1,0 +1,26 @@
+{
+  "name": "tsc-fs2",
+  "version": "0.0.1",
+  "description": "javascript setup",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/the-special-character/tsc-fs2.git"
+  },
+  "keywords": [
+    "javascript",
+    "es6"
+  ],
+  "author": "Yagnesh Modh <yagnesh.modh@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/the-special-character/tsc-fs2/issues"
+  },
+  "homepage": "https://github.com/the-special-character/tsc-fs2#readme",
+  "devDependencies": {
+    "webpack": "^5.74.0"
+  }
+}

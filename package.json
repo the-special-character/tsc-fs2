@@ -1,7 +1,7 @@
 {
   "name": "tsc-fs2",
   "version": "0.0.1",
-  "description": "Javascript setup",
+  "description": "javascript setup",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -14,10 +14,13 @@
     "javascript",
     "es6"
   ],
-  "author": "Devang prajapati <devang6314@gmail.com>",
-  "license": "ISC",
+  "author": "Devang Prajapati <devang6314@gmail.com>",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/the-special-character/tsc-fs2/issues"
   },
-  "homepage": "https://github.com/the-special-character/tsc-fs2#readme"
+  "homepage": "https://github.com/the-special-character/tsc-fs2#readme",
+  "devDependencies": {
+    "webpack": "^5.74.0"
+  }
 }

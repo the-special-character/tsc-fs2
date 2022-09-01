@@ -5,6 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -23,8 +25,17 @@
   "homepage": "https://github.com/the-special-character/tsc-fs2#readme",
   "devDependencies": {
     "@babel/core": "^7.18.13",
+    "@babel/eslint-parser": "^7.18.9",
     "@babel/preset-env": "^7.18.10",
     "babel-loader": "^8.2.5",
+    "eslint": "^8.23.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
+    "eslint-plugin-react": "^7.31.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "prettier": "2.7.1",
     "webpack": "^5.74.0",
     "webpack-cli": "^4.10.0"
   }

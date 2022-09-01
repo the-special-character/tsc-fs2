@@ -1,0 +1,4 @@
+{
+  "presets": ["@babelf/present-env"],
+  "plugins": ["@label"]
+}

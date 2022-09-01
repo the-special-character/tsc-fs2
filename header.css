@@ -1,8 +1,0 @@
-@layer components {
-    .header {
-        @apply py-7 shadow-header z-10;
-        & > div {
-            @apply flex justify-between items-center container;
-        }
-    }
-}

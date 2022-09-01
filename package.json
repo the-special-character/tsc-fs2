@@ -1,21 +1,23 @@
 {
   "name": "tsc-fs2",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
+  "version": "0.0.1",
+  "description": "Javascript setup",
+  "main": "index.js",
   "scripts": {
-    "start": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "devDependencies": {
-    "@tailwindcss/forms": "^0.5.2",
-    "@tailwindcss/line-clamp": "^0.4.0",
-    "autoprefixer": "^10.4.7",
-    "postcss": "^8.4.14",
-    "postcss-nesting": "^10.1.10",
-    "sass": "^1.53.0",
-    "tailwindcss": "^3.1.6",
-    "vite": "^3.0.0"
-  }
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/the-special-character/tsc-fs2.git"
+  },
+  "keywords": [
+    "javascript",
+    "es6"
+  ],
+  "author": "Devang prajapati <devang6314@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/the-special-character/tsc-fs2/issues"
+  },
+  "homepage": "https://github.com/the-special-character/tsc-fs2#readme"
 }

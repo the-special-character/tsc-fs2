@@ -4,6 +4,7 @@
   "description": "javascript setup",
   "main": "index.js",
   "scripts": {
+    "build": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,6 +22,10 @@
   },
   "homepage": "https://github.com/the-special-character/tsc-fs2#readme",
   "devDependencies": {
-    "webpack": "^5.74.0"
+    "@babel/core": "^7.18.13",
+    "@babel/preset-env": "^7.18.10",
+    "babel-loader": "^8.2.5",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0"
   }
 }

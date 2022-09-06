@@ -4,6 +4,7 @@
   "description": "JavaScript SetUp",
   "main": "index.js",
   "scripts": {
+    "build": "webpack ",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,6 +22,7 @@
   },
   "homepage": "https://github.com/the-special-character/tsc-fs2#readme",
   "devDependencies": {
-    "webpack": "^5.74.0"
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0"
   }
 }

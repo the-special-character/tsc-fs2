@@ -4,12 +4,17 @@ module.exports = {
     es2021: true,
     node: true,
   },
-  extends: ["plugin:react/recommended", "airbnb"],
+  parser: "@babel/eslint-parser",
+  extends: [
+    'plugin:react/recommended',
+    'airbnb',
+    'prettier',
+  ],
   overrides: [],
   parserOptions: {
-    ecmaVersion: "latest",
-    sourceType: "module",
+    ecmaVersion: 'latest',
+    sourceType: 'module',
   },
-  plugins: ["react"],
+  plugins: ['react'],
   rules: {},
 };

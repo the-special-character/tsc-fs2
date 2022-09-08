@@ -1,4 +1,3 @@
-
 // const  express = require('express');
 
 // const app = express();
@@ -62,7 +61,7 @@
 
 // app.get('/course',(req,res)=>{
 //     res.send(courses);
-// }) 
+// })
 
 // app.put('/course/:id',(req,res)=>{
 //     const {id }=req.params;
@@ -96,7 +95,7 @@
 //     const {id}  = req.params;
 //    console.log(id);
 //    const result=courses.find((x)=>x.id === Number(id))
-//    res.send(result)  
+//    res.send(result)
 // });
 
 // app.get('/course',(req,res) => {
@@ -121,3 +120,5 @@
 // app.listen('3002','localhost',()=>{
 //     console.log('server started');
 // })
+
+                 console.log(`hello.....`);

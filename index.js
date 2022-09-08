@@ -1,8 +1,8 @@
-import { a, b } from './app';
+import { a, b } from "./app";
 
 class Animal {
   static makesound() {
-    console.log('bhow bhow');
+    console.log("bhow bhow");
   }
 }
 

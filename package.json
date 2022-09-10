@@ -42,6 +42,8 @@
     "webpack-cli": "^4.10.0"
   },
   "dependencies": {
+    "config": "^3.3.8",
+    "dotenv": "^16.0.2",
     "express": "^4.18.1"
   }
 }

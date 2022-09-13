@@ -6,6 +6,7 @@ const mongoose =require('mongoose');
 const app = express();
 
 const CourseRouter = require("./Router/CoursesRouter");
+const QuestionRouter = require("./Router/questionRouter");
 
 dotenv.config({
   override: true,
@@ -32,6 +33,7 @@ const connectDB = async ()=>{
 connectDB();
 
 app.use("/api/courses", CourseRouter);
+app.use("/api/questions",QuestionRouter );
 
 const port = process.env.PORT || 3004;
 

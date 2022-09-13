@@ -17,14 +17,17 @@ const app = express();
 
 app.use(express.json());
 
-// mongoose.connect('mongodb://localhost:27017/quizeApp', {
-//   keepAlive: true,
-// }).catch();
+// mongoose.connect('mongodb://localhost:27017/quizApp',{
+//   keepAlive:true,
+// });
+// config.MONGOOSE = mongoose.connect('mongodb://localhost:27017/quizApp',{
+//     keepAlive:true,
+//    });
 
-const connectDB = async () => {
+const connectdb = async () => {
   try {
     await mongoose.connect(
-      'mongodb://localhost:27017/quizeApp',
+      'mongodb://127.0.0.1:27017/quizApp',
     );
     console.log('database connected....');
   } catch (error) {
@@ -32,7 +35,7 @@ const connectDB = async () => {
   }
 };
 
-connectDB();
+connectdb();
 
 app.use('/api/courses', coursesRoute);
 app.use('/api/questions', questionRoute);

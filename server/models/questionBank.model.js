@@ -2,25 +2,25 @@ const mongoose = require('mongoose');
 
 const { Schema, model } = mongoose;
 
-// const optionSchema = new Schema({
-//   id: Number,
-//   text: String,
-// });
-
-const questionBankSchema = new Schema({
-  question: {
-    type: String,
-    required: true,
+const questionBankSchema = new Schema(
+  {
+    question: {
+      type: String,
+      required: true,
+    },
+    options: { type: [String], required: true },
+    answer: { type: String, required: true },
+    difficultyLevel: {
+      type: String,
+      enum: ['low', 'moderate', 'novice'],
+      default: 'low',
+    },
+    hint: String,
   },
-  options: { type: [String], required: true },
-  answer: { type: String, required: true },
-  difficultyLevel: {
-    type: String,
-    enum: ['low', 'moderate', 'novice'],
-    default: 'low',
+  {
+    timestamps: true,
   },
-  hint: String,
-});
+);
 
 const QuestionBank = model(
   'questionBank',

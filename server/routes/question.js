@@ -5,6 +5,8 @@ const router = express.Router();
 
 router.get('/', questionsController.getQuestions);
 
+router.get('/:id', questionsController.getQuestion);
+
 router.post('/', questionsController.addQuestion);
 
 router.put('/:id', () => {});

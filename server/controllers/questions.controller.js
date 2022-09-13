@@ -19,6 +19,19 @@ class Questions {
       res.status(400).send(error.message);
     }
   };
+
+  static getQuestion = async (req, res) => {
+    try {
+      const { id } = req.params;
+      const question = await QuestionBank.findById(id);
+      if (question === null) {
+        throw new Error('Record not exist');
+      }
+      res.send(question);
+    } catch (error) {
+      res.status(400).send(error.message);
+    }
+  };
 }
 
 module.exports = Questions;

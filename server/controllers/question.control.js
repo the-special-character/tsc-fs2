@@ -1,4 +1,4 @@
-const QuestionBank = require('../modal/questionbank.modal');
+const QuestionBank = require('../model/questionbank.model');
 
 class Questions{
     static addQueation = async (req,res)=>{

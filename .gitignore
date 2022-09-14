@@ -1,2 +1,5 @@
 node_modules
 *-lock.json
+config
+.env
+.env.*

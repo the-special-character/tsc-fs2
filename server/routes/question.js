@@ -1,15 +1,22 @@
 const express = require('express');
 const questionsController = require('../controllers/questions.controller');
 
+const validation = require('../middleware/validation.middleware');
+const questionsSchema = require('../validationSchema/questions');
+
 const router = express.Router();
 
 router.get('/', questionsController.getQuestions);
 
 router.get('/:id', questionsController.getQuestion);
 
-router.post('/', questionsController.addQuestion);
+router.post(
+  '/',
+  validation(questionsSchema),
+  questionsController.addQuestion,
+);
 
-router.put('/:id', () => {});
+router.patch('/:id', questionsController.updateQuestion);
 
 router.delete('/:id', () => {});
 

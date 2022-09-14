@@ -1,5 +1,6 @@
 const express = require('express');
 const dotenv = require('dotenv');
+const mongoose = require('mongoose');
 const config = require('config');
 const coursesRoute = require('./routes/courses');
 const questionRoute = require('./routes/question');
@@ -15,6 +16,23 @@ console.log(dbConfig);
 const app = express();
 
 app.use(express.json());
+
+// mongoose.connect('mongodb://localhost:27017/quizApp', {
+//   keepAlive: true,
+// });
+
+const connectDB = async () => {
+  try {
+    await mongoose.connect(
+      'mongodb://127.0.0.1:27017/quizApp',
+    );
+    console.log('database connected...');
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+connectDB();
 
 app.use('/api/courses', coursesRoute);
 app.use('/api/questions', questionRoute);

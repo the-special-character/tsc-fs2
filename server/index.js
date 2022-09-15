@@ -4,6 +4,8 @@ const mongoose = require('mongoose');
 const config = require('config');
 const coursesRoute = require('./routes/courses');
 const questionRoute = require('./routes/question');
+// eslint-disable-next-line no-unused-vars
+const userRoute = require('./routes/user');
 
 dotenv.config({
   override: true,
@@ -26,8 +28,17 @@ app.use(express.json());
 
 const connectdb = async () => {
   try {
+    await mongoose.connect();
+    console.log('database connected....');
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+const connectdb1 = async () => {
+  try {
     await mongoose.connect(
-      'mongodb://127.0.0.1:27017/quizApp',
+      'mongodb://127.0.0.1:27017/Users',
     );
     console.log('database connected....');
   } catch (error) {
@@ -36,9 +47,11 @@ const connectdb = async () => {
 };
 
 connectdb();
+connectdb1();
 
 app.use('/api/courses', coursesRoute);
 app.use('/api/questions', questionRoute);
+app.use('/api/users', userRoute);
 
 console.log(process.env.AWS_KEY);
 

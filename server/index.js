@@ -1,12 +1,13 @@
 const express = require("express");
 const dotenv = require("dotenv");
 const config = require("config");
-const mongoose =require('mongoose');
+const mongoose = require("mongoose");
 
 const app = express();
 
 const CourseRouter = require("./Router/CoursesRouter");
 const QuestionRouter = require("./Router/questionRouter");
+const UserRouter = require("./Router/User.router");
 
 dotenv.config({
   override: true,
@@ -21,9 +22,9 @@ app.use(express.json());
 //   keepAlive:true
 // });
 
-const connectDB = async ()=>{
+const connectDB = async () => {
   try {
-    await mongoose.connect('mongodb://127.0.0.1:27017/QuizApp');
+    await mongoose.connect("mongodb://127.0.0.1:27017/QuizApp");
     console.log(`database connected....`);
   } catch (error) {
     console.log(error);
@@ -32,8 +33,20 @@ const connectDB = async ()=>{
 
 connectDB();
 
+// const connectUserDB = async () => {
+//   try {
+//     await mongoose.connect("mongodb://127.0.0.1:27017/UserList");
+//     console.log(`User database connected....`);
+//   } catch (error) {
+//     console.log(error);
+//   }
+// };
+
+// connectUserDB();
+
 app.use("/api/courses", CourseRouter);
-app.use("/api/questions",QuestionRouter );
+app.use("/api/questions", QuestionRouter);
+app.use("/api/user", UserRouter);
 
 const port = process.env.PORT || 3004;
 

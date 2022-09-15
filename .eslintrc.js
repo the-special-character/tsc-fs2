@@ -4,7 +4,7 @@ module.exports = {
     es2021: true,
     node: true,
   },
-  
+
   extends: ["plugin:react/recommended", "airbnb", "prettier"],
   overrides: [],
   parserOptions: {
@@ -12,5 +12,7 @@ module.exports = {
     sourceType: "module",
   },
   plugins: ["react"],
-  rules: {},
+  rules: {
+    "no-useless-escape": 0,
+  },
 };

@@ -1,13 +1,23 @@
-const express = require("express");
-const questionsController = require("../controllers/questions.controller");
+const express = require('express');
+const questionsController = require('../controllers/questions.controller');
+
+const validation = require('../middleware/validation.middleware');
+const questionsSchema = require('../validationSchema/questions');
+
 const router = express.Router();
 
-router.get("/", questionsController.getQuestion);
+router.get('/', questionsController.getQuestions);
 
-router.post("/", questionsController.addQuestion);
+router.get('/:id', questionsController.getQuestion);
 
-router.put("/:id", questionsController.updateQuestion);
+router.post(
+  '/',
+  validation(questionsSchema),
+  questionsController.addQuestion,
+);
 
-router.delete("/:id", () => {});
+router.patch('/:id', questionsController.updateQuestion);
+
+router.delete('/:id', () => {});
 
 module.exports = router;

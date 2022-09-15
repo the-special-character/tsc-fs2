@@ -1,23 +1,23 @@
 const courses = [
   {
     id: 1,
-    courseName: "react",
-    trainerName: "Yagnesh",
+    courseName: 'react',
+    trainerName: 'Yagnesh',
   },
   {
     id: 2,
-    courseName: "node",
-    trainerName: "Yagnesh",
+    courseName: 'node',
+    trainerName: 'Yagnesh',
   },
   {
     id: 3,
-    courseName: "react-native",
-    trainerName: "Yagnesh",
+    courseName: 'react-native',
+    trainerName: 'Yagnesh',
   },
   {
     id: 4,
-    courseName: "Flutter",
-    trainerName: "Vraj",
+    courseName: 'Flutter',
+    trainerName: 'Vraj',
   },
 ];
 
@@ -29,7 +29,7 @@ class Courses {
       return true;
     }
 
-    const filteredRecord = courses.filter((x) => {
+    const filteredRecord = courses.filter(x => {
       let result = true;
 
       for (let i = 0; i < data.length; i += 1) {
@@ -46,9 +46,11 @@ class Courses {
 
   static getCourseById = (req, res) => {
     const { id } = req.params;
-    const record = courses.find((course) => course.id === Number(id));
+    const record = courses.find(
+      course => course.id === Number(id),
+    );
     if (!record) {
-      res.status(400).send("record not found");
+      res.status(400).send('record not found');
     }
     res.send(record);
   };
@@ -64,10 +66,12 @@ class Courses {
   static updateCourse = (req, res) => {
     const { id } = req.params;
 
-    const index = courses.findIndex((x) => x.id === Number(id));
+    const index = courses.findIndex(
+      x => x.id === Number(id),
+    );
 
     if (index === -1) {
-      res.status(400).send("recod not found");
+      res.status(400).send('recod not found');
     }
 
     const updatedRecord = { ...req.body, id: Number(id) };
@@ -80,7 +84,9 @@ class Courses {
   static patchCourse = (req, res) => {
     const { id } = req.params;
 
-    const index = courses.findIndex((x) => x.id === Number(id));
+    const index = courses.findIndex(
+      x => x.id === Number(id),
+    );
 
     const updatedRecord = {
       ...courses[index],
@@ -95,11 +101,13 @@ class Courses {
   static deleteCourse = (req, res) => {
     const { id } = req.params;
 
-    const index = courses.findIndex((x) => x.id === Number(id));
+    const index = courses.findIndex(
+      x => x.id === Number(id),
+    );
 
     courses.splice(index, 1);
 
-    res.send("record deleted");
+    res.send('record deleted');
   };
 }
 

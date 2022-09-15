@@ -1,35 +1,39 @@
+const ResponseWrapper = require("../helpers/responseWrapper");
 const QuestionBank = require("../model/questionbank.model");
 
 class Questions {
   static addQueation = async (req, res) => {
+    const resp = new ResponseWrapper(res);
     try {
       const newQuestion = new QuestionBank(req.body);
       const saveQuestion = await newQuestion.save();
-      res.send(saveQuestion);
+      return resp.OK(saveQuestion);
     } catch (error) {
-      res.status(400).send(error.message);
+      return resp.INVALID_INPUT(`ERROR`);
     }
   };
 
   static getAllQuestion = async (req, res) => {
+    const resp = new ResponseWrapper(res);
     try {
       const allquestions = await QuestionBank.find();
-      res.send(allquestions);
+      return resp.OK(allquestions);
     } catch (error) {
-      res.status(400).send(error.message);
+      return resp.INTERNAL_ERROR(`Cannot Fetch`);
     }
   };
 
   static getQuestion = async (req, res) => {
+    const resp = new ResponseWrapper(res);
     try {
       const { id } = req.params;
       const Aquestion = await QuestionBank.findById(id);
-      res.send(Aquestion);
+      resp.OK(Aquestion);
       if (Aquestion === null) {
         throw new Error("requested data do not exist.....");
       }
     } catch (error) {
-      res.status(400).send(error.message);
+      resp.INVALID_INPUT("Invalid_Input ");
     }
   };
 
@@ -51,24 +55,26 @@ class Questions {
   };
 
   static updateQuestion = async (req, res) => {
+    const resp = new ResponseWrapper(res);
     try {
       const { id } = req.params;
       const updatedData = await QuestionBank.findOneAndUpdate(id, req.body, {
         new: true,
       });
-      res.send(updatedData);
+      resp.UPDATED(updatedData);
     } catch (error) {
-      res.status(400).send(error.message);
+      resp.INVALID_INPUT(`INVALID_INPUT`);
     }
   };
 
   static deleteQuestion = async (req, res) => {
+    const resp = new ResponseWrapper(res);
     try {
       const { id } = req.params;
       await QuestionBank.findByIdAndDelete(id);
-      res.send(`Deleted succesfully`);
+      resp.DELETED(`Record deleted Succesfully`);
     } catch (error) {
-      res.status(400).send(error.message);
+      resp.INVALID_INPUT(`INVALID_INPUT`);
     }
   };
 }

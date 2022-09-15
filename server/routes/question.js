@@ -6,7 +6,7 @@ router.get("/", questionsController.getQuestion);
 
 router.post("/", questionsController.addQuestion);
 
-router.put("/:id", () => {});
+router.put("/:id", questionsController.updateQuestion);
 
 router.delete("/:id", () => {});
 

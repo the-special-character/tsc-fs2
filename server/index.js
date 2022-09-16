@@ -2,17 +2,19 @@ const express = require("express");
 
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
-const config = require("config");
+// const config = require("config");
+const users = require("./routes/users");
 const coursesRoute = require("./routes/courses");
 const questionRoute = require("./routes/question");
+// const userModel = require("./models/user.model");
 
 dotenv.config({
   override: true,
 });
 
-const dbConfig = config.get("Customer.dbConfig");
+// const dbConfig = config.get("Customer.dbConfig");
 
-console.log(dbConfig);
+// console.log(dbConfig);
 
 const app = express();
 
@@ -24,7 +26,7 @@ app.use(express.json());
 
 const connectDB = async () => {
   try {
-    await mongoose.connect("mongodb://localhost:27017/quizeApp");
+    await mongoose.connect("mongodb://127.0.0.1:27017/quizeApp");
     console.log("database connected....");
   } catch (error) {
     console.log(error);
@@ -33,6 +35,7 @@ const connectDB = async () => {
 
 connectDB();
 
+app.use("api/", users);
 app.use("/api/courses", coursesRoute);
 app.use("/api/questions", questionRoute);
 

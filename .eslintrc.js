@@ -12,5 +12,7 @@ module.exports = {
     sourceType: "module",
   },
   plugins: ["react"],
-  rules: {},
+  rules: {
+    "no-usless-escape": 0,
+  },
 };

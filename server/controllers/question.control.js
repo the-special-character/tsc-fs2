@@ -9,7 +9,7 @@ class Questions {
       const saveQuestion = await newQuestion.save();
       return resp.OK(saveQuestion);
     } catch (error) {
-      return resp.INVALID_INPUT(`ERROR`);
+      return resp.INVALID_INPUT(error.message);
     }
   };
 
@@ -19,7 +19,7 @@ class Questions {
       const allquestions = await QuestionBank.find();
       return resp.OK(allquestions);
     } catch (error) {
-      return resp.INTERNAL_ERROR(`Cannot Fetch`);
+      return resp.INTERNAL_ERROR(error.message);
     }
   };
 
@@ -33,7 +33,7 @@ class Questions {
         throw new Error("requested data do not exist.....");
       }
     } catch (error) {
-      resp.INVALID_INPUT("Invalid_Input ");
+      resp.INVALID_INPUT(error.message);
     }
   };
 
@@ -63,7 +63,7 @@ class Questions {
       });
       resp.UPDATED(updatedData);
     } catch (error) {
-      resp.INVALID_INPUT(`INVALID_INPUT`);
+      resp.INVALID_INPUT(error.message);
     }
   };
 
@@ -74,7 +74,7 @@ class Questions {
       await QuestionBank.findByIdAndDelete(id);
       resp.DELETED(`Record deleted Succesfully`);
     } catch (error) {
-      resp.INVALID_INPUT(`INVALID_INPUT`);
+      resp.INVALID_INPUT(error.message);
     }
   };
 }

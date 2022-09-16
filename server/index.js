@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const config = require('config');
 const coursesRoute = require('./routes/courses');
 const questionRoute = require('./routes/question');
+const usersRoute = require('./routes/users');
 
 dotenv.config({
   override: true,
@@ -34,6 +35,7 @@ const connectDB = async () => {
 
 connectDB();
 
+app.use('/api', usersRoute);
 app.use('/api/courses', coursesRoute);
 app.use('/api/questions', questionRoute);
 

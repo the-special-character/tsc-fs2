@@ -1,12 +1,10 @@
 const express = require("express");
-
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
-// const config = require("config");
-const users = require("./routes/users");
+const config = require("config");
 const coursesRoute = require("./routes/courses");
 const questionRoute = require("./routes/question");
-// const userModel = require("./models/user.model");
+const usersRoute = require("./routes/users");
 
 dotenv.config({
   override: true,
@@ -35,7 +33,7 @@ const connectDB = async () => {
 
 connectDB();
 
-app.use("api/", users);
+app.use("/api", usersRoute);
 app.use("/api/courses", coursesRoute);
 app.use("/api/questions", questionRoute);
 

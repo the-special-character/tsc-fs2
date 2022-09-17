@@ -18,9 +18,11 @@ const app = express();
 
 app.use(express.json());
 
-// mongoose.connect('mongodb://localhost:27017/quizeApp', {
-//   keepAlive: true,
-// }).catch();
+// mongoose
+//   .connect("mongodb://localhost:27017/quizeApp", {
+//     keepAlive: true,
+//   })
+//   .catch();
 
 const connectDB = async () => {
   try {

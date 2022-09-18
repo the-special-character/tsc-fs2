@@ -1,7 +1,5 @@
+const ResponseWrapper = require("../helper/responceWrapper");
 const UserModel = require("../models/user.model");
-
-const resWrapper = require("../helper/responceWrapper");
-
 class UserController {
   static register = async (req, res) => {
     const resWrapper = new ResponseWrapper(res);

@@ -28,7 +28,7 @@ app.use(express.json());
 
 const connectDB = async () => {
   try {
-    await mongoose.connect("mongodb://localhost:27017/quizeApp");
+    await mongoose.connect("mongodb://127.0.0.1:27017/quizeApp");
     console.log("database connected....");
   } catch (error) {
     console.log(error);
@@ -37,7 +37,7 @@ const connectDB = async () => {
 
 connectDB();
 
-app.use("/api", usersRoute);
+app.use("/api/user", usersRoute);
 app.use("/api/courses", coursesRoute);
 app.use("/api/questions", questionRoute);
 

@@ -2,30 +2,36 @@ const mongoose = require("mongoose");
 
 const { Schema, model } = mongoose;
 
-const validateEmail = (email) => {
-  const re = /^\w+([\.-]?\w+)@\w+([\.-]?\w+)(\.\w{2,3})+$/;
-  return re.test(email);
-};
+const validateEmail = (email) =>
+  /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email);
 
-const Userschema = new Schema(
+const userSchema = new Schema(
   {
     firstName: {
       type: String,
-      required: `Please enter firstname`,
+      required: "first name is required",
     },
-    lastName: { type: String, required: `Please enter lastname` },
+    lastName: {
+      type: String,
+      required: "last name is required",
+    },
     email: {
       type: String,
       unique: true,
-      required: true,
-      validate: [validateEmail, `Please enter the proper email`],
+      required: "Email address is required",
+      validate: [validateEmail, "Please fill a valid email address"],
     },
-    PhoneNumber: { type: String },
-    password: { type: String, required: `Please enter password` },
+    password: {
+      type: String,
+      required: "last name is required",
+    },
+    mobile: {
+      type: String,
+    },
   },
-  { timestamps: true }
+  {
+    timestamps: true,
+  }
 );
 
-const userBank = model("users", Userschema);
-
-module.exports = userBank;
+module.exports = model("users", userSchema);

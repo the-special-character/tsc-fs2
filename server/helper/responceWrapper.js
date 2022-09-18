@@ -36,6 +36,10 @@ class ResponseWrapper {
   internalError(errMessage) {
     this.handle(errMessage, "UNKNOWN_ERROR", 500);
   }
+
+  notFound(errMessage) {
+    this.handle(errMessage, "RECORD_NOT_FOUND", 400);
+  }
 }
 
 module.exports = ResponseWrapper;

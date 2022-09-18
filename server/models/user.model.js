@@ -1,4 +1,6 @@
 const mongoose = require("mongoose");
+const bcrypt = require("bcrypt");
+const config = require("config");
 
 const { Schema, model } = mongoose;
 
@@ -31,7 +33,23 @@ const userSchema = new Schema(
   },
   {
     timestamps: true,
+    toJSON: {
+      transform: (doc, ret) => {
+        const { password, ...rest } = ret;
+        return rest;
+      },
+    },
   }
 );
+
+userSchema.pre("save", async function (next) {
+  if (this.isModified("password")) {
+    const saltRounds = config.get("saltRounds");
+    const salt = await bcrypt.genSalt(Number(saltRounds));
+    const hashPassword = await bcrypt.hash(this.password, salt);
+    this.password = hashPassword;
+  }
+  next();
+});
 
 module.exports = model("users", userSchema);

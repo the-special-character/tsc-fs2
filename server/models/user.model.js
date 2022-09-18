@@ -26,4 +26,6 @@ const Userschema = new Schema(
   { timestamps: true }
 );
 
-module.exports = model("users", Userschema);
+const userBank = model("users", Userschema);
+
+module.exports = userBank;

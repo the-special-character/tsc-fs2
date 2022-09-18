@@ -5,6 +5,6 @@ const userSchema = require("../validationSchema/user");
 
 const router = express.Router();
 
-router.post("/register", validation(userSchema), userController.register);
+router.post("/", validation(userSchema), userController.register);
 
 module.exports = router;

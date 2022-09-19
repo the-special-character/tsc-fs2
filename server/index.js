@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const config = require('config');
 const coursesRoute = require('./routes/courses');
 const questionRoute = require('./routes/question');
+const usersRoute = require('./routes/user.route');
 
 dotenv.config({
   override: true,
@@ -39,6 +40,7 @@ connectdb();
 
 app.use('/api/courses', coursesRoute);
 app.use('/api/questions', questionRoute);
+app.use('/api/', usersRoute);
 
 console.log(process.env.AWS_KEY);
 

@@ -6,7 +6,7 @@ const mongoose = require("mongoose");
 
 const coursesRoute = require("./routes/courses");
 const questionRoute = require("./routes/question");
-const usersRoute = require("./routes/users");
+const usersRoute = require("./routes/user.route");
 
 dotenv.config({
   override: true,

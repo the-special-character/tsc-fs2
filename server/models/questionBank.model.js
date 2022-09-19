@@ -1,3 +1,4 @@
+const { string } = require("joi");
 const mongoose = require("mongoose");
 
 const { Schema, model } = mongoose;
@@ -15,6 +16,7 @@ const questionBankSchema = new Schema(
       enum: ["low", "moderate", "novice"],
       default: "low",
     },
+    tags: [String],
     hint: String,
   },
   {

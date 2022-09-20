@@ -1,3 +1,5 @@
+const bcrypt = require("bcrypt");
+
 const UserModel = require("../models/user.model");
 const ResponseWrapper = require("../helper/responceWrapper");
 
@@ -14,18 +16,20 @@ class UserController {
   };
 
   static login = async (req, res) => {
+    const rw = new ResponseWrapper(res);
     try {
       const { email, password } = req.body;
       const user = await UserModel.findOne({
         email,
-        password,
       });
-      if (user) {
+      if (!user) {
         return rw.notFound("User not Found");
       }
-      rw.ok(user);
+      await bcrypt.compare(password, user.password);
+
+      return rw.created(user);
     } catch (error) {
-      rw.internalError(error.message);
+      return rw.internalError(error.message);
     }
   };
 }

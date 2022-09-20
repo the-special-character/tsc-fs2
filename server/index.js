@@ -7,7 +7,7 @@ const mongoose = require("mongoose");
 const coursesRoute = require("./routes/courses");
 const questionRoute = require("./routes/question");
 const usersRoute = require("./routes/user.route");
-
+const batchRoute = require("./routes/batch.route");
 dotenv.config({
   override: true,
 });
@@ -37,6 +37,7 @@ const connectDB = async () => {
 
 connectDB();
 
+app.use("/api/batch", usersRoute);
 app.use("/api", usersRoute);
 app.use("/api/courses", coursesRoute);
 app.use("/api/questions", questionRoute);

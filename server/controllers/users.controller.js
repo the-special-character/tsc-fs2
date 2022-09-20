@@ -2,6 +2,7 @@
 // user
 // login
 // register
+
 const UserModel = require('../models/user.model');
 const ResponseWrapper = require('../helper/responseWrapper');
 

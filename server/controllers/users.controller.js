@@ -25,11 +25,14 @@ class UserController {
         email,
         password,
       });
-      if (user) {
-        return rw.ok('founded');
+      if (!user) {
+        rw.notFound('User not found');
       }
+      if (password === user.password) {
+        rw.created(user);
+      } else rw.notFound('password is wrong');
     } catch (error) {
-      return rw.internalError(error.message);
+      rw.internalError(error.message);
     }
   };
 }

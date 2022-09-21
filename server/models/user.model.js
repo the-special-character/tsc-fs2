@@ -1,42 +1,76 @@
 const mongoose = require('mongoose');
+const bcrypt = require('bcrypt');
+const config = require('config');
 
 const { Schema, model } = mongoose;
 
-const validateEmail = email =>
-  /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(
-    email,
-  );
+const validateEmail = email => {
+  const re =
+    /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+  return re.test(email);
+};
+
+function batchValidation(value) {
+  if (this.role === 'student') {
+    return value.length > 0;
+  }
+  return true;
+}
 
 const userSchema = new Schema(
   {
-    firstName: {
-      type: String,
-      required: 'first name is required',
-    },
-    lastName: {
-      type: String,
-      required: 'last name is required',
-    },
+    firstName: { type: String, required: true },
+    lastName: { type: String, required: true },
     email: {
       type: String,
+      required: true,
       unique: true,
-      required: 'Email address is required',
       validate: [
         validateEmail,
         'Please fill a valid email address',
       ],
     },
-    password: {
-      type: String,
-      required: 'last name is required',
+    password: { type: String, required: true },
+    mobile: String,
+    batch: {
+      type: [
+        {
+          type: Schema.Types.ObjectId,
+          ref: 'batch',
+        },
+      ],
+      validate: [
+        batchValidation,
+        'Min 1 record required...',
+      ],
     },
-    mobile: {
+    role: {
       type: String,
+      enum: ['admin', 'tutor', 'student'],
+      default: 'student',
     },
   },
   {
-    timestamps: true,
+    toJSON: {
+      transform: (data, res) => {
+        const { password, ...rest } = res;
+        return rest;
+      },
+    },
+    versionKey: false,
   },
 );
 
-module.exports = model('users', userSchema);
+userSchema.pre('save', async function (next) {
+  if (this.isModified('password')) {
+    const saltRounds = config.get('saltRounds');
+    const salt = await bcrypt.genSalt(saltRounds);
+    const hash = await bcrypt.hash(this.password, salt);
+    this.password = hash;
+  }
+  next();
+});
+
+const userModel = model('users', userSchema);
+
+module.exports = userModel;

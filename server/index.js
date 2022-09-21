@@ -2,9 +2,9 @@ const express = require('express');
 const dotenv = require('dotenv');
 const mongoose = require('mongoose');
 const config = require('config');
-const coursesRoute = require('./routes/courses');
 const questionRoute = require('./routes/question');
-const usersRoute = require('./routes/users');
+const userRoute = require('./routes/user.route');
+const batchRoute = require('./routes/batch.route');
 
 dotenv.config({
   override: true,
@@ -35,9 +35,9 @@ const connectDB = async () => {
 
 connectDB();
 
-app.use('/api', usersRoute);
-app.use('/api/courses', coursesRoute);
+app.use('/api', userRoute);
 app.use('/api/questions', questionRoute);
+app.use('/api/batch', batchRoute);
 
 console.log(process.env.AWS_KEY);
 

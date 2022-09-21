@@ -1,62 +1,64 @@
 const batchModel = require("../models/batch.model");
-
 const ResponseWrapper = require("../helper/responceWrapper");
 
 class Batch {
-  static getAllBatch = (req, res) => {
-    const data = Object.keys(req.query);
-    if (data.length === 0) {
-      res.send(batch);
-      return true;
-    }
+  static getallBatch = async (req, res) => {
+    const resWrapper = new ResponseWrapper(res);
+    try {
+      const batchQuery = {};
+      const keys = Object.keys(req.query);
 
-    const filteredRecord = batch.filter((x) => {
-      let result = true;
-
-      for (let i = 0; i < data.length; i += 1) {
-        const element = data[i];
-        result &&= x[element] === req.query[element];
+      for (let i = 0; i < keys.length; i += 1) {
+        const element = keys[i];
+        batchQuery[element] = req.query[element];
       }
-      return result;
-    });
 
-    res.send(filteredRecord);
-    return true;
-  };
-
-  static getBatchByBatchName = (req, res) => {
-    const { batchName } = req.params;
-    const record = courses.find((course) => course.id === batchName);
-    if (!record) {
-      res.status(400).send("record not found");
+      const batch = await batchModel.find(batchQuery);
+      resWrapper.ok(batch);
+    } catch (error) {
+      resWrapper.internalError(error.message);
     }
-    res.send(record);
   };
 
-  static updateBatch = (req, res) => {
-    const { batchName } = req.params;
-
-    const index = batch.findIndex((x) => x.batchName === batchName);
-
-    if (index === -1) {
-      res.status(400).send("record not found");
+  static addBatch = async (req, res) => {
+    try {
+      const newBatch = new batchModel(req.query);
+      const savedBatch = await newBatch.save();
+      res.send(savedBatch);
+    } catch (error) {
+      res.status(400).send(error.message);
     }
-
-    const updatedRecord = { ...req.body, batchName: batchName };
-
-    batch.splice(index, 1, this.updatedRecord);
-
-    res.send(updatedRecord);
   };
 
-  static deleteBatch = (req, res) => {
-    const { batchName } = req.params;
+  static getBatch = async (req, res) => {
+    try {
+      const { batchName } = req.params;
+      const batch = await batchModel.findById(batchName);
+      if (batch === null) {
+        throw new Error("Record not exist");
+      }
+      res.send(batch);
+    } catch (error) {
+      res.status(400).send(error.message);
+    }
+  };
 
-    const index = batch.findIndex((x) => x.batchName === batchName);
+  static updateBatch = async (res, req) => {
+    try {
+      const { batchName } = req.params;
 
-    batch.splice(index, 1);
+      const updatedRecord = await batchModel.findByIdAndUpdate(
+        batchName,
+        req.body,
+        {
+          new: true,
+        }
+      );
 
-    res.send("record deleted");
+      res.send(updatedRecord);
+    } catch (error) {
+      res.status(400).send(error.message);
+    }
   };
 }
 

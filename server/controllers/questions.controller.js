@@ -1,5 +1,5 @@
-const ResponseWrapper = require('../helper/responceWrapper');
-const QuestionBank = require('../models/questionBank.model');
+const ResponseWrapper = require("../helper/responceWrapper");
+const QuestionBank = require("../models/questionBank.model");
 
 class Questions {
   static getQuestions = async (req, res) => {
@@ -13,10 +13,7 @@ class Questions {
         searchQuery[element] = req.query[element];
       }
 
-      const questions = await QuestionBank.find(
-        searchQuery,
-      );
-
+      const questions = await QuestionBank.find(searchQuery);
       resWrapper.ok(questions);
     } catch (error) {
       resWrapper.internalError(error.message);
@@ -28,7 +25,7 @@ class Questions {
       const { id } = req.params;
       const question = await QuestionBank.findById(id);
       if (question === null) {
-        throw new Error('Record not exist');
+        throw new Error("Record not exist");
       }
       res.send(question);
     } catch (error) {
@@ -50,10 +47,9 @@ class Questions {
     try {
       const { id } = req.params;
 
-      const updatedRecord =
-        await QuestionBank.findByIdAndUpdate(id, req.body, {
-          new: true,
-        });
+      const updatedRecord = await QuestionBank.findByIdAndUpdate(id, req.body, {
+        new: true,
+      });
 
       res.send(updatedRecord);
     } catch (error) {

@@ -7,27 +7,27 @@ const batchSchema = new Schema(
   {
     batchName: {
       type: String,
-      required: "batch name is required",
+      required: true,
     },
     BatchTime: {
       type: String,
-      required: "batch time is required",
+      required: true,
     },
     tutorName: {
       type: String,
-      required: "tutor Name is required",
+      required: true,
     },
     startDate: {
       type: String,
-      required: "startDate is required",
+      required: true,
     },
     courseName: {
       type: String,
-      required: "Course name is required",
+      required: true,
     },
     duration: {
       type: String,
-      required: "duration is required",
+      required: true,
     },
   },
   {

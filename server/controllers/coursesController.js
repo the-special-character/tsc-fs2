@@ -67,7 +67,7 @@ class Courses {
     const index = courses.findIndex((x) => x.id === Number(id));
 
     if (index === -1) {
-      res.status(400).send("recod not found");
+      res.status(400).send("record not found");
     }
 
     const updatedRecord = { ...req.body, id: Number(id) };

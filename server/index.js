@@ -37,7 +37,7 @@ const connectDB = async () => {
 
 connectDB();
 
-app.use("/api/batch", usersRoute);
+app.use("/api/batch", batchRoute);
 app.use("/api", usersRoute);
 app.use("/api/courses", coursesRoute);
 app.use("/api/questions", questionRoute);

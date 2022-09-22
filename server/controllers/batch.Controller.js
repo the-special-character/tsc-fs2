@@ -21,10 +21,12 @@ class Batch {
   };
 
   static addBatch = async (req, res) => {
+    const rw = new ResponseWrapper(res);
     try {
-      const newBatch = new batchModel(req.query);
+      const newBatch = new batchModel(req.body);
+
       const savedBatch = await newBatch.save();
-      res.send(savedBatch);
+      rw.created(savedBatch);
     } catch (error) {
       res.status(400).send(error.message);
     }

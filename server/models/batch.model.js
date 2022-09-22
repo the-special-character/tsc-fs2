@@ -18,8 +18,10 @@ const batchSchema = new Schema(
       required: true,
     },
     startDate: {
-      type: String,
-      required: true,
+      type: Date,
+    },
+    endDate: {
+      type: Date,
     },
     courseName: {
       type: String,
@@ -32,6 +34,7 @@ const batchSchema = new Schema(
   },
   {
     timestamps: true,
+    versionKey: false,
   }
 );
 

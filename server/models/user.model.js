@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 const config = require("config");
 
-const { Schema, model } = mongoose;
+const { Schema, model, ObjectId } = mongoose;
 
 const validEmail = (email) => {
   const regex = /^((?!\.)[\w\-_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$/;
@@ -20,6 +20,7 @@ const userSchema = new Schema(
     },
     password: { type: String, required: true },
     mobile: { type: String, required: true },
+    batch: [ObjectId],
   },
   {
     timestamps: true,
@@ -29,6 +30,7 @@ const userSchema = new Schema(
         return rest;
       },
     },
+    versionKey: false,
   }
 );
 

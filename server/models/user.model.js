@@ -1,32 +1,76 @@
 const mongoose = require('mongoose');
+const bcrypt = require('bcrypt');
+const config = require('config');
 
 const { Schema, model } = mongoose;
 
 const validateEmail = email => {
-  const re = /^\w+([\.-]?\w+)@\w+([\.-]?\w+)(\.\w{2,3})+$/;
+  const re =
+    /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
   return re.test(email);
 };
 
+function batchValidation(value) {
+  if (this.role === 'student') {
+    return value.length > 0;
+  }
+  return true;
+}
+
 const userSchema = new Schema(
   {
-    firstname: { type: String, required: true },
-    lastname: { type: String, required: true },
+    firstName: { type: String, required: true },
+    lastName: { type: String, required: true },
     email: {
       type: String,
-      required: 'Email address is required',
+      required: true,
+      unique: true,
       validate: [
         validateEmail,
         'Please fill a valid email address',
       ],
     },
     password: { type: String, required: true },
-    phonenumber: { type: String },
+    mobile: String,
+    batch: {
+      type: [
+        {
+          type: Schema.Types.ObjectId,
+          ref: 'batch',
+        },
+      ],
+      validate: [
+        batchValidation,
+        'Min 1 record required...',
+      ],
+    },
+    role: {
+      type: String,
+      enum: ['admin', 'tutor', 'student'],
+      default: 'student',
+    },
   },
   {
-    timestamps: true,
+    toJSON: {
+      transform: (data, res) => {
+        const { password, ...rest } = res;
+        return rest;
+      },
+    },
+    versionKey: false,
   },
 );
 
-const usermodel = model('users', userSchema);
+userSchema.pre('save', async function (next) {
+  if (this.isModified('password')) {
+    const saltRounds = config.get('saltRounds');
+    const salt = await bcrypt.genSalt(saltRounds);
+    const hash = await bcrypt.hash(this.password, salt);
+    this.password = hash;
+  }
+  next();
+});
 
-module.exports = usermodel;
+const userModel = model('users', userSchema);
+
+module.exports = userModel;

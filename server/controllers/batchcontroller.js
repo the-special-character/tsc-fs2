@@ -1,49 +1,48 @@
+const ResponseWrapper = require('../helper/responseWrapper');
 const BatchModel = require('../models/batch.model');
 
-const ResponseWrapper = require('../helper/responseWrapper');
-const batchModel = require('../models/batch.model');
-
 class BatchController {
-  // post/////
-
-  static batchInfo = async (req, res) => {
-    const rw = new ResponseWrapper(res);
-
+  static addBatch = async (req, res) => {
     try {
-      const batch = new BatchModel(req.body);
-      const savedBatch = await batch.save();
-      rw.created(savedBatch);
+      const newQuestion = new BatchModel(req.body);
+      const savedQuestion = await newQuestion.save();
+      res.send(savedQuestion);
     } catch (error) {
-      rw.internalError('error');
+      res.status(400).send(error.message);
     }
   };
-  // put
 
-  static updateBatch = async (req, res) => {
-    const rw = new ResponseWrapper(res);
+  static getBatches = async (req, res) => {
+    const resWrapper = new ResponseWrapper(res);
     try {
-      const { id } = req.params;
-      const updatedBatchInfo =
-        await batchModel.findByIdAndUpdate(id, req.body, {
-          new: true,
-        });
-      res.send(updatedBatchInfo);
+      const searchQuery = {};
+      const keys = Object.keys(req.query);
+
+      for (let i = 0; i < keys.length; i += 1) {
+        const element = keys[i];
+        searchQuery[element] = req.query[element];
+      }
+
+      const questions = await BatchModel.find(
+        searchQuery,
+      ).populate('tutor');
+
+      resWrapper.ok(questions);
     } catch (error) {
-      rw.internalError('internal error');
+      resWrapper.internalError(error.message);
     }
   };
-  // delete
 
-  static deleteBatchInfo = async (req, res) => {
-    const rw = new ResponseWrapper(res);
-
+  static getBatch = async (req, res) => {
     try {
       const { id } = req.params;
-      const deleteBatchInfo =
-        await BatchModel.findByIdAndDelete(id, req.body);
-      res.send(deleteBatchInfo);
+      const question = await BatchModel.findById(id);
+      if (question === null) {
+        throw new Error('Record not exist');
+      }
+      res.send(question);
     } catch (error) {
-      rw.internalError('internal error occurs');
+      res.status(400).send(error.message);
     }
   };
 }

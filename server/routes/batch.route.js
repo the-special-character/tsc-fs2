@@ -1,11 +1,18 @@
 const express = require('express');
-
-const BatchController = require('../controllers/batchcontroller');
+const batchContoller = require('../controllers/batchcontroller');
+const validation = require('../middleware/Validate.miidlleware');
+const batchValidationSchema = require('../validationschema/batch');
 
 const router = express.Router();
 
-router.post('/batchInfo', BatchController.batchInfo);
-router.put('/:id', BatchController.updateBatch);
-router.delete('/:id', BatchController.deleteBatchInfo);
+router.get('/', batchContoller.getBatches);
+
+router.get('/:id', batchContoller.getBatch);
+
+router.post(
+  '/',
+  validation(batchValidationSchema),
+  batchContoller.addBatch,
+);
 
 module.exports = router;

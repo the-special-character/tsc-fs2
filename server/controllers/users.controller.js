@@ -1,8 +1,4 @@
-// othentication
-// user
-// login
-// register
-
+const bcrypt = require('bcrypt');
 const UserModel = require('../models/user.model');
 const ResponseWrapper = require('../helper/responseWrapper');
 
@@ -24,16 +20,23 @@ class UserController {
       const { email, password } = req.body;
       const user = await UserModel.findOne({
         email,
-        password,
       });
       if (!user) {
-        rw.notFound('User not found');
+        return rw.notFound('User Not found');
       }
-      if (password === user.password) {
-        rw.created(user);
-      } else rw.notFound('password is wrong');
+
+      const isPasswordValid = await bcrypt.compare(
+        password,
+        user.password,
+      );
+
+      if (!isPasswordValid) {
+        return rw.notFound('Password not valid');
+      }
+
+      return rw.ok(user);
     } catch (error) {
-      rw.internalError(error.message);
+      return rw.internalError(error);
     }
   };
 }

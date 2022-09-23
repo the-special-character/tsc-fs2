@@ -36,6 +36,10 @@ class ResponseWrapper {
   internalError(errMessage) {
     this.handle(errMessage, 'UNKNOWN_ERROR', 500);
   }
+
+  notfound(errMessage) {
+    this.handle(errMessage, 'USER_NOT_FOUND', 404);
+  }
 }
 
 module.exports = ResponseWrapper;

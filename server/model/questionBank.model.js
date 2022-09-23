@@ -21,6 +21,7 @@ const questionBankSchema = new Schema(
       enum: ['low', 'moderate', 'novice'],
       default: 'low',
     },
+    tags: [String],
     hint: String,
   },
   {

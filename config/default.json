@@ -1,4 +1,6 @@
 {
+  "salt": "njknvfksj",
+  "saltRounds": 10, 
     "Customer": {
       "dbConfig": {
         "host": "localhost",

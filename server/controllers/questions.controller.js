@@ -6,7 +6,6 @@ class Questions {
     const resWrapper = new ResponseWrapper(res);
 
     try {
-      // const { difficultyLevel, answer } = req.query;
       const searchQuery = {};
 
       const keys = Object.keys(req.query);
@@ -14,14 +13,6 @@ class Questions {
         const element = keys[i];
         searchQuery[element] = req.query[element];
       }
-
-      // if (difficultyLevel) {
-      //   searchQuery.difficultyLevel = difficultyLevel;
-      // }
-
-      // if (answer) {
-      //   searchQuery.answer = answer;
-      // }
 
       const questions = await QuestionBank.find(
         searchQuery,

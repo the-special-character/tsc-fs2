@@ -1,3 +1,4 @@
+/* eslint-disable react/prefer-stateless-function */
 import React, { Component } from 'react';
 
 import Child1 from './child1';
@@ -9,7 +10,7 @@ export default class App extends Component {
             <div>
                 <h1>Hello From App</h1>
                 <Child1 name="Jil" />
-                <Child1 name="Shubh" />
+                <Child1 name="Ayushi" />
                 <Child2 designation="software engineer" />
             </div>
         );

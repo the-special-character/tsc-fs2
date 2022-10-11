@@ -36,7 +36,13 @@ export default class Child2 extends Component {
                     Increment
                 </button>
                 <p>{counter}</p>
-                <button type="button" className="bg-teal-500 mx-4">
+                <button type="button"
+                    onClick={() => {
+                        this.setState(({ counter }) => ({
+                            counter: counter - 1,
+                        }));
+                    }}
+                    className="bg-red-500 mx-4">
                     Decrement
                 </button>
             </div>

@@ -10,6 +10,11 @@ const validateEmail = email => {
   return re.test(email);
 };
 
+const validPassword = (password) => {
+  const regex = /^(?=.?[A-Z])(?=.?[a-z])(?=.?[0-9])(?=.?[^\w\s]).{8,}$/
+  return regex.test(password)
+};
+
 function batchValidation(value) {
   if (this.role === 'student') {
     return value.length > 0;
@@ -40,7 +45,8 @@ const userSchema = new Schema(
 
     password: {
       type: String,
-      required: true,
+      required: 'password is required',
+      validate: [validPassword, `Password is required`],
     },
 
     mobile: {
@@ -66,6 +72,7 @@ const userSchema = new Schema(
     },
   },
   {
+    timestamps: true,
     toJSON: {
       transform: (data, res) => {
         const { password, ...rest } = res;
@@ -85,6 +92,13 @@ userSchema.pre('save', async function (next) {
   }
   next();
 });
+
+userSchema.methods = {
+  async comparePassword(password) {
+    const result = await bcrypt.compare(password, this.password)
+    return result
+  },
+}
 
 const userModel = model('users', userSchema);
 

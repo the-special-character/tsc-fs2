@@ -1,7 +1,9 @@
 const express = require('express');
 const dotenv = require('dotenv');
 const mongoose = require('mongoose');
-const config = require('config');
+// const cors = require('cors');
+const passport = require('passport');
+
 const questionRoute = require('./routes/question');
 const userRoute = require('./routes/user.route');
 const batchRoute = require('./routes/batch.route');
@@ -10,17 +12,55 @@ dotenv.config({
   override: true,
 });
 
-const dbConfig = config.get('Customer.dbConfig');
-
-console.log(dbConfig);
-
 const app = express();
-
 app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 
-// mongoose.connect('mongodb://localhost:27017/quizeApp', {
-//   keepAlive: true,
-// }).catch();
+app.use(
+  require('express-session')({
+    secret: 'keyboard cat',
+    resave: false,
+    saveUninitialized: false,
+  }),
+);
+
+app.use(passport.initialize());
+app.use(passport.session());
+// app.use(cors());
+
+app.use('/api/auth', userRoute);
+app.use('/api/questions', questionRoute);
+app.use('/api/batch', batchRoute);
+
+const {
+  authenticate,
+  tokenValidation,
+  googleAuthenticate,
+  // serializeUser,
+  // deserializeUser,
+} = require('./auth/authStrategy');
+
+passport.use(authenticate());
+passport.use(tokenValidation());
+passport.use(googleAuthenticate());
+
+passport.serializeUser((user, cb) => {
+  process.nextTick(() => {
+    console.log(user['_json']);
+    cb(
+      null,
+      user['_json'] || {
+        id: user.id,
+        username: user.username,
+        name: user.name,
+      },
+    );
+  });
+});
+
+passport.deserializeUser((user, cb) => {
+  process.nextTick(() => cb(null, user));
+});
 
 const connectDB = async () => {
   try {
@@ -34,12 +74,6 @@ const connectDB = async () => {
 };
 
 connectDB();
-
-app.use('/api', userRoute);
-app.use('/api/questions', questionRoute);
-app.use('/api/batch', batchRoute);
-
-console.log(process.env.AWS_KEY);
 
 const port = process.env.PORT || 3004;
 

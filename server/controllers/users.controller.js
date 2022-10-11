@@ -1,4 +1,8 @@
-const bcrypt = require('bcrypt');
+// require('../auth/passportHandler');
+const jwt = require('jsonwebtoken');
+const config = require('config');
+// const passport = require('passport');
+const passport = require('passport');
 const UserModel = require('../models/user.model');
 const ResponseWrapper = require('../helper/responceWrapper');
 
@@ -8,37 +12,45 @@ class UserController {
     try {
       const user = new UserModel(req.body);
       const savedUser = await user.save();
-      rw.created(savedUser);
+
+      const secretOrPrivateKey = config.get(
+        'secretOrPrivateKey',
+      );
+      const accessToken = jwt.sign(
+        {
+          ...user.toJSON(),
+        },
+        secretOrPrivateKey,
+        {
+          expiresIn: 1000 * 60 * 60 * 24,
+        },
+      );
+
+      rw.created({ accessToken, user: savedUser });
     } catch (error) {
       rw.internalError(error);
     }
   };
 
-  static login = async (req, res) => {
-    const rw = new ResponseWrapper(res);
-    try {
-      const { email, password } = req.body;
-      const user = await UserModel.findOne({
-        email,
-      });
+  static login = (req, res, next) => {
+    passport.authenticate('local', (err, user, info) => {
+      const rw = new ResponseWrapper(res);
+      if (err) return rw.internalError(err.message);
       if (!user) {
-        return rw.notFound('User Not found');
+        return rw.unAuthorised(info.message);
       }
 
-      const isPasswordValid = await bcrypt.compare(
-        password,
-        user.password,
+      const accessToken = jwt.sign(
+        { id: user._id, email: user.email },
+        'secret key',
       );
 
-      if (!isPasswordValid) {
-        return rw.notFound('Password not valid');
-      }
-
-      return rw.ok(user);
-    } catch (error) {
-      return rw.internalError(error);
-    }
+      return rw.ok({ accessToken, user });
+    })(req, res, next);
   };
+
+  // static googleLogin = (req, res, next) =>
+  //   passport.authenticate('google')(req, res, next);
 }
 
 module.exports = UserController;

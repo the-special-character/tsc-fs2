@@ -40,6 +40,10 @@ class ResponseWrapper {
   notFound(errMessage) {
     this.handle(errMessage, 'RECORD_NOT_FOUND', 400);
   }
+
+  unAuthorised(errMessage) {
+    this.handle(errMessage, 'UNAUTHORISED', 401);
+  }
 }
 
 module.exports = ResponseWrapper;

@@ -1,12 +1,13 @@
 const express = require('express');
 const questionsController = require('../controllers/questions.controller');
+const auth = require('../middleware/auth.middleware');
 
 const validation = require('../middleware/validation.middleware');
 const questionsSchema = require('../validationSchema/questions');
 
 const router = express.Router();
 
-router.get('/', questionsController.getQuestions);
+router.get('/', auth, questionsController.getQuestions);
 
 router.get('/:id', questionsController.getQuestion);
 

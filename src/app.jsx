@@ -1,17 +1,30 @@
-/* eslint-disable react/prefer-stateless-function */
 import React, { Component } from 'react';
-
-import Child1 from './child1';
 import Child2 from './child2';
 
 export default class App extends Component {
+    state = {
+        error: '',
+    };
+
+    static getDerivedStateFromError(error) {
+        return {
+            error,
+        };
+    }
+
+    componentDidCatch(error, info) {
+        console.log(info.componentStack);
+    }
+
     render() {
+        const { error } = this.state;
+        if (error) {
+            return <h1>{error.message}</h1>;
+        }
+
         return (
             <div>
-                <h1>Hello From App</h1>
-                <Child1 name="Jil" />
-                <Child1 name="Ayushi" />
-                <Child2 designation="software engineer" />
+                <Child2 designation="software engineer 1" xyz={5} />
             </div>
         );
     }

@@ -1,17 +1,19 @@
-import React, { Component } from 'react';
+import React, { createRef, PureComponent } from 'react';
+import TodoFilter from './todoFilter';
+import TodoForm from './todoForm';
+import TodoList from './todoList';
 
-export default class App extends Component {
+const btns = ['all', 'pending', 'completed'];
+
+export default class App extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
       todoList: [],
       filterType: 'all',
     };
+    this.todoTextRef = createRef();
   }
-
-  // onChangeText = event => {
-  //   this.setState({ todoText: event.target.value });
-  // };
 
   addTodo = event => {
     event.preventDefault();
@@ -21,13 +23,13 @@ export default class App extends Component {
           ...todoList,
           {
             id: new Date().valueOf(),
-            text: this.todoTextRef.value,
+            text: this.todoTextRef.current.value,
             isDone: false,
           },
         ],
       }),
       () => {
-        this.todoTextRef.value = '';
+        this.todoTextRef.current.value = '';
       },
     );
   };
@@ -66,104 +68,29 @@ export default class App extends Component {
   };
 
   render() {
-    console.log('render');
-    const { todoList, filterType } = this.state;
+    const { todoList } = this.state;
     return (
       <div className="flex flex-col items-center h-screen">
         <h1 className="text-4xl font-bold my-8">
           Todo App
         </h1>
-        <form onSubmit={this.addTodo}>
-          <input
-            type="text"
-            ref={ref => {
-              this.todoTextRef = ref;
-            }}
-          />
-          <button
-            type="submit"
-            className="btn rounded-l-none"
-          >
-            Add Todo
-          </button>
-        </form>
+        <TodoForm
+          addTodo={this.addTodo}
+          ref={this.todoTextRef}
+        />
         <div className="w-full flex-1">
-          {todoList
-            // .filter(item => {
-            //   if (filterType === 'pending') {
-            //     return item.isDone === false;
-            //   }
-            //   if (filterType === 'completed') {
-            //     return item.isDone === true;
-            //   }
-            //   return true;
-            // })
-            .map(x => {
-              if (
-                (filterType === 'pending' &&
-                  x.isDone === false) ||
-                (filterType === 'completed' &&
-                  x.isDone === true) ||
-                filterType === 'all'
-              ) {
-                return (
-                  <div
-                    className="flex m-8 items-center"
-                    key={x.id}
-                  >
-                    <input
-                      type="checkbox"
-                      checked={x.isDone}
-                      onChange={() =>
-                        this.toggleComplete(x)
-                      }
-                    />
-                    <p
-                      className="flex-1 px-4"
-                      style={{
-                        textDecoration: x.isDone
-                          ? 'line-through'
-                          : 'none',
-                      }}
-                    >
-                      {x.text}
-                    </p>
-                    <button
-                      type="button"
-                      className="btn"
-                      onClick={() => this.deleteTodo(x)}
-                    >
-                      Delete
-                    </button>
-                  </div>
-                );
-              }
-              return null;
-            })}
+          {todoList.length > 0 && (
+            <TodoList
+              {...this.state}
+              deleteTodo={this.deleteTodo}
+              toggleComplete={this.toggleComplete}
+            />
+          )}
         </div>
-        <div className="w-full flex">
-          <button
-            type="button"
-            className="btn rounded-none flex-1 bg-blue-400"
-            onClick={() => this.filterTodo('all')}
-          >
-            All
-          </button>
-          <button
-            type="button"
-            className="btn rounded-none flex-1 bg-blue-400"
-            onClick={() => this.filterTodo('pending')}
-          >
-            Pending
-          </button>
-          <button
-            type="button"
-            className="btn rounded-none flex-1 bg-blue-400"
-            onClick={() => this.filterTodo('completed')}
-          >
-            Completed
-          </button>
-        </div>
+        <TodoFilter
+          filterTodo={this.filterTodo}
+          btns={btns}
+        />
       </div>
     );
   }

@@ -21,5 +21,6 @@ module.exports = {
   plugins: ['react'],
   rules: {
     'no-useless-escape': 0,
+    'react/jsx-props-no-spreading': 0,
   },
 };

@@ -1,19 +1,20 @@
 import React, { memo } from 'react';
 import PropTypes from 'prop-types';
+import { TodoContext } from './context/todoContext';
 
-function TodoListItem({
-  item,
-  toggleComplete,
-  deleteTodo,
-}) {
+function TodoListItem({ item }) {
   console.log('todo list item render');
   return (
     <div className="flex m-8 items-center">
-      <input
-        type="checkbox"
-        checked={item.isDone}
-        onChange={() => toggleComplete(item)}
-      />
+      <TodoContext.Consumer>
+        {({ toggleComplete }) => (
+          <input
+            type="checkbox"
+            checked={item.isDone}
+            onChange={() => toggleComplete(item)}
+          />
+        )}
+      </TodoContext.Consumer>
       <p
         className="flex-1 px-4"
         style={{
@@ -24,13 +25,17 @@ function TodoListItem({
       >
         {item.text}
       </p>
-      <button
-        type="button"
-        className="btn"
-        onClick={() => deleteTodo(item)}
-      >
-        Delete
-      </button>
+      <TodoContext.Consumer>
+        {({ deleteTodo }) => (
+          <button
+            type="button"
+            className="btn"
+            onClick={() => deleteTodo(item)}
+          >
+            Delete
+          </button>
+        )}
+      </TodoContext.Consumer>
     </div>
   );
 }
@@ -41,8 +46,6 @@ TodoListItem.propTypes = {
     text: PropTypes.string.isRequired,
     isDone: PropTypes.bool.isRequired,
   }).isRequired,
-  toggleComplete: PropTypes.func.isRequired,
-  deleteTodo: PropTypes.func.isRequired,
 };
 
 export default memo(TodoListItem);

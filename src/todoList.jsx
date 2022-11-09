@@ -1,50 +1,27 @@
 import React, { memo } from 'react';
-import PropTypes from 'prop-types';
 import TodoListItem from './todoListItem';
+import { TodoContext } from './context/todoContext';
 
-function TodoList({
-  todoList,
-  filterType,
-  toggleComplete,
-  deleteTodo,
-}) {
+function TodoList() {
   console.log('todoList render');
   return (
-    <>
-      {todoList.map(x => {
-        if (
-          (filterType === 'pending' &&
-            x.isDone === false) ||
-          (filterType === 'completed' &&
-            x.isDone === true) ||
-          filterType === 'all'
-        ) {
-          return (
-            <TodoListItem
-              key={x.id}
-              item={x}
-              toggleComplete={toggleComplete}
-              deleteTodo={deleteTodo}
-            />
-          );
-        }
-        return null;
-      })}
-    </>
+    <TodoContext.Consumer>
+      {({ todoList, filterType }) =>
+        todoList.map(x => {
+          if (
+            (filterType === 'pending' &&
+              x.isDone === false) ||
+            (filterType === 'completed' &&
+              x.isDone === true) ||
+            filterType === 'all'
+          ) {
+            return <TodoListItem key={x.id} item={x} />;
+          }
+          return null;
+        })
+      }
+    </TodoContext.Consumer>
   );
 }
-
-TodoList.propTypes = {
-  todoList: PropTypes.arrayOf(
-    PropTypes.exact({
-      id: PropTypes.number,
-      text: PropTypes.string,
-      isDone: PropTypes.bool,
-    }),
-  ).isRequired,
-  filterType: PropTypes.string.isRequired,
-  toggleComplete: PropTypes.func.isRequired,
-  deleteTodo: PropTypes.func.isRequired,
-};
 
 export default memo(TodoList);

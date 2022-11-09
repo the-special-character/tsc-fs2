@@ -1,27 +1,25 @@
 import React, { memo } from 'react';
-import PropTypes from 'prop-types';
+import { btns } from './utils';
+import { TodoContext } from './context/todoContext';
 
-function TodoFilter({ filterTodo, btns }) {
-  console.log('TodoFilter render');
+function TodoFilter() {
   return (
     <div className="w-full flex">
       {btns.map(x => (
-        <button
-          key={x}
-          type="button"
-          className="btn rounded-none flex-1 bg-blue-400"
-          onClick={() => filterTodo(x)}
-        >
-          {x}
-        </button>
+        <TodoContext.Consumer key={x}>
+          {({ filterTodo }) => (
+            <button
+              type="button"
+              className="btn rounded-none flex-1 bg-blue-400"
+              onClick={() => filterTodo(x)}
+            >
+              {x}
+            </button>
+          )}
+        </TodoContext.Consumer>
       ))}
     </div>
   );
 }
-
-TodoFilter.propTypes = {
-  filterTodo: PropTypes.func.isRequired,
-  btns: PropTypes.arrayOf(PropTypes.string).isRequired,
-};
 
 export default memo(TodoFilter);

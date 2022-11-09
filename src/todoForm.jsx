@@ -1,20 +1,23 @@
-import React, { forwardRef, memo } from 'react';
-import PropTypes from 'prop-types';
+import React, { memo } from 'react';
+import { TodoContext } from './context/todoContext';
 
-const TodoForm = forwardRef(({ addTodo }, ref) => {
+function TodoForm() {
   console.log('TodoForm render');
   return (
-    <form onSubmit={addTodo}>
-      <input type="text" ref={ref} />
-      <button type="submit" className="btn rounded-l-none">
-        Add Todo
-      </button>
-    </form>
+    <TodoContext.Consumer>
+      {({ addTodo, todoTextRef }) => (
+        <form onSubmit={addTodo}>
+          <input type="text" ref={todoTextRef} />
+          <button
+            type="submit"
+            className="btn rounded-l-none"
+          >
+            Add Todo
+          </button>
+        </form>
+      )}
+    </TodoContext.Consumer>
   );
-});
-
-TodoForm.propTypes = {
-  addTodo: PropTypes.func.isRequired,
-};
+}
 
 export default memo(TodoForm);
